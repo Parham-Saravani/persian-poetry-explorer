@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+.hero-dark {
+    background:
+        linear-gradient(135deg,
+            #08111F 0%,
+            #1E1B4B 40%,
+            #312E81 100%),
+
+}
+
+.hero-light {
+    background:
+        linear-gradient(135deg,
+            #F8FAFC 0%,
+            #F3E8FF 50%,
+            #EDE9FE 100%)
+}
+.sorte-btn:focus + .sort-container{
+    display: flex;
+}
+.sorte-btn:not(:focus) +.sort-container{
+    display: none;
+}
+
+@font-face {
+    font-family: 'VazirMatn';
+    src: url('./assets/fonts/Vazirmatn-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'VazirMatn';
+    src: url('./assets/fonts/Vazirmatn-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'VazirMatn';
+    src: url('./assets/fonts/Vazirmatn-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'VazirMatn';
+    src: url('./assets/fonts/Vazirmatn-Thin.ttf');
+    font-weight: 200;
+}
+
+@keyframes loader {
+    0% {
+        box-shadow: 20px 0 #7C3AED, -20px 0 rgba(124,58,237,.2);
+        background: #7C3AED;
+    }
+
+    33% {
+        box-shadow: 20px 0 #7C3AED, -20px 0 rgba(124,58,237,.2);
+        background: rgba(124,58,237,.2);
+    }
+
+    66% {
+        box-shadow: 20px 0 rgba(124,58,237,.2), -20px 0 #7C3AED;
+        background: rgba(124,58,237,.2);
+    }
+
+    100% {
+        box-shadow: 20px 0 rgba(124,58,237,.2), -20px 0 #7C3AED;
+        background: #7C3AED;
+    }
+}
+
+@theme {
+
+    --color-dark-input-bg: #131E35;
+    --color-dark-input-text: #F8FAFC;
+    --color-dark-input-placeholder: #64748B;
+    --color-dark-search-icon: #94A3B8;
+    --color-dark-search-icon-hover: #F8FAFC;
+    --color-dark-search-icon-focus: #A78BFA;
+
+
+    --color-dark-bg: #08111F;
+    --color-dark-surface: #0F172A;
+    --color-dark-card: #16213A;
+    --color-dark-primary: #7C3AED;
+    --color-dark-primary-hover: #8B5CF6;
+    --color-dark-secondary: #312E81;
+    --color-dark-text: #F8FAFC;
+    --color-dark-text-secondary: #94A3B8;
+    --color-dark-border: #23304D;
+    --color-dark-success: #22C55E;
+    --color-dark-warning: #F59E0B;
+    --color-dark-danger: #EF4444;
+
+    --color-light-input-bg: #FFFFFF;
+    --color-light-input-border: #E2E8F0;
+    --color-light-input-text: #0F172A;
+    --color-light-input-placeholder: #94A3B8;
+    --color-light-search-icon: #64748B;
+
+    --color-light-bg: #F8FAFC;
+    --color-light-surface: #FFFFFF;
+    --color-light-card: #F1F5F9;
+    --color-light-primary: #7C3AED;
+    --color-light-primary-hover: #8B5CF6;
+    --color-light-secondary: #EDE9FE;
+    --color-light-text: #0F172A;
+    --color-light-text-secondary: #475569;
+    --color-light-border: #E2E8F0;
+    --color-light-success: #16A34A;
+    --color-light-warning: #D97706;
+    --color-light-danger: #DC2626;
+
+
+    --font-vazir: 'VazirMatn';
+
+    --text-card-header: 0.9rem;
+    --text-card-description: 0.9rem;
+    --text-label: 0.7rem;
+
+    --text-menu: 0.95rem;
+    --text-hero: 3rem;
+    --text-section: 1.3rem;
+
+    --animate-loader : loader 1s infinite linear alternate;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
