@@ -16,7 +16,9 @@ const fallPoetContainer = document.querySelector('.fall-poet-container')
 const fallSummaryContainer = document.querySelector('.fall-summary-container')
 
 const loaderContainer = document.querySelector('.loader-container')
+const errorElement = document.querySelector('.error-element')
 
+let isDone = false;
 const onPageLoad = () => {
     themeHandler();
 }
@@ -26,9 +28,11 @@ const fetchFall = () => {
     fetch('https://api.ganjoor.net/api/ganjoor/hafez/faal')
         .then(res => res.json())
         .then(data => {
+            isDone = true;
             createFallHandler(data);
         })
         .catch(() => {
+            isDone = false;
             errorHandler();
         })
         .finally(() => {
@@ -47,8 +51,11 @@ const createFallHandler = (data) => {
 }
 
 const errorHandler = () => {
-    fallPoetContainer.classList.add('hidden')
-    fallSummaryContainer.classList.add('hidden')
+    console.log(isDone);
+    fallSummaryContent.classList.add('hidden')
+    fallSummaryContainer.classList.remove('hidden')
+    errorElement.classList.remove('hidden')
+    errorElement.classList.add('flex')
 }
 
 const showLoader = () => {
@@ -62,10 +69,13 @@ const showLoader = () => {
     loaderContainer.innerHTML = '<div class="loader w-4 rounded-full animate-loader aspect-square"></div>'
 }
 const hideLoader = () => {
-    fallPoetContent.classList.remove('hidden')
-    fallSummaryContainer.classList.remove('hidden')
-    fallPoetContent.classList.add('flex')
-
+    fallPoetContainer.classList.add('hidden')
+    if (isDone) {
+        fallSummaryContainer.classList.remove('hidden')
+        fallPoetContainer.classList.remove('hidden')
+        fallPoetContent.classList.remove('hidden')
+        fallPoetContent.classList.add('flex')
+    }
     loaderContainer.classList.remove('h-60')
     loaderContainer.classList.add('hidden')
 }

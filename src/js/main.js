@@ -73,7 +73,7 @@ const randomPoemHandler = () => {
         .catch(() => {
             randomPoemPoet.innerHTML = '';
             randomPoemText.innerHTML = '';
-            randomPoemText.innerHTML = '<p class="font-bold bg-red-600/20 py-6 px-16 text-red-600 rounded-2xl">مشکلی پیش آمده<br> لطفا مجدد تلاش کنید </p>'
+            randomPoemText.innerHTML = '<p class="font-vazir font-bold bg-red-600/20 py-6 px-16 text-red-600 rounded-2xl">مشکلی پیش آمده<br> لطفا مجدد تلاش نمایید </p>'
         })
         .finally(() => {
             hideLoader(randomPoemContainer, randomPoemTextContainer);

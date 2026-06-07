@@ -10,32 +10,33 @@
 </head>
 
 <body class="dark:bg-dark-bg pb-10 bg-light-bg">
-    <div class="container pt-5 max-sm:px-3 mx-auto">
-        <header class="flex justify-between items-center">
+    <div class="container max-sm:px-3 pt-5 mx-auto">
+        <header class="max-sm:flex-row-reverse flex justify-between items-center">
             <div class="flex">
                 <button
-                    class="hidden justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-2xl dark-btn">
+                    class="hidden justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs dark-btn">
                     <i class="fa-solid fa-moon"></i>
                 </button>
                 <button
-                    class="flex justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-2xl light-btn">
+                    class="flex justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs light-btn">
                     <i class="fa-solid fa-sun"></i>
                 </button>
             </div>
             <div>
-                <ul class="flex gap-6">
+                <ul class="max-sm:pr-5 flex gap-6">
                     <li><a href="./index.html"
-                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu">صفحه اصلی</a>
-                    </li>
+                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu transition-transform duration-300 hover:scale-125">صفحه
+                            اصلی</a></li>
                     <li class="h-9 border-b-2 border-dark-primary"><a href="./poets.html"
-                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu">شاعران</a></li>
+                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu transition-transform duration-300 hover:scale-75">شاعران</a>
+                    </li>
                     <li><a href="./fall.html"
-                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu">فال حافظ
-                            ها</a></li>
+                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu transition-transform duration-300 hover:scale-75">فال
+                            حافظ</a></li>
                 </ul>
             </div>
-            <div class="relative">
-                <p class="dark:text-dark-text text-light-text text-2xl font-vazir font-black">Avin</p>
+            <div class="max-sm:hidden relative">
+                <p class=" dark:text-dark-text text-light-text text-2xl font-vazir font-black">Avin</p>
                 <span
                     class="-right-3 bottom-2.5 animate-pulse absolute dark:bg-dark-primary bg-light-primary w-1.5 h-1.5 rounded-full"></span>
             </div>
@@ -50,68 +51,81 @@
     <div class="container mx-auto max-sm:px-3">
         <main class="mt-10">
             <header class="text-center">
-                <h1 class="font-vazir font-black text-4xl dark:text-dark-text text-light-text">شاعران</h1>
-                <p class="mt-3 font-vazir font-normal text-xl dark:text-dark-text-secondary text-light-text-secondary">
+                <h1 class="max-sm:text-3xl font-vazir font-black text-4xl dark:text-dark-text text-light-text">شاعران
+                </h1>
+                <p
+                    class="max-sm:text-xs mt-3 font-vazir font-normal text-xl dark:text-dark-text-secondary text-light-text-secondary">
                     در اینجا میتوانید شاعران بزرگ فارسی را ببینید</p>
             </header>
             <main class="pb-2.5 mt-4">
                 <div class="relative flex justify-end">
                     <button
-                        class="w-50 h-12 dark:bg-dark-surface bg-light-surface rounded-xl border-2 dark:border-dark-border border-light-border  dark:text-dark-text text-light-text font-vazir font-bold  text-card-header transition-normal duration-300 ring-2 ring-transparent focus:ring-2 dark:focus:ring-dark-input-placeholder focus:ring-light-input-placeholder cursor-pointer sorte-btn">مرتب
+                        class="max-sm:w-40 w-50 h-12 dark:bg-dark-surface bg-light-surface rounded-xl border-2 dark:border-dark-border border-light-border  dark:text-dark-text text-light-text font-vazir font-bold  text-card-header transition-normal duration-300 ring-2 ring-transparent focus:ring-2 dark:focus:ring-dark-input-placeholder focus:ring-light-input-placeholder cursor-pointer sorte-btn">مرتب
                         سازی</button>
-                        
-                    <div
-                        class="absolute top-14 z-20">
-                        <ul class="hidden z-50 w-50 p-2 shadow-2xl dark:bg-dark-input-bg bg-light-input-bg rounded-xl sort-container">
+
+                    <div class="absolute top-14 z-20">
+                        <ul
+                            class="max-sm:w-40 hidden z-50 w-50 p-2 shadow-2xl dark:bg-dark-input-bg bg-light-input-bg rounded-xl sort-container">
                             <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items active total-poets">
+                                class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items active total-poets">
                                 همه شاعرها</li>
 
-                            <li
-                                class="dark:text-dark-text text-darg-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن سوم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-darg-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن سوم">
                                 قرن سوم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن چهارم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن چهارم">
                                 قرن چهارم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن پنجم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن پنجم">
                                 قرن پنجم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن ششم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن ششم">
                                 قرن ششم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن هفتم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن هفتم">
                                 قرن هفتم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن هشتم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن هشتم">
                                 قرن هشتم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن نهم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن نهم">
                                 قرن نهم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن دهم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن دهم">
                                 قرن دهم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن یازدهم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن یازدهم">
                                 قرن یازدهم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن دوازدهم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن دوازدهم">
                                 قرن دوازدهم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن سیزدهم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن سیزدهم">
                                 قرن سیزدهم</li>
-                            <li
-                                class="dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items" data-century="قرن چهاردهم">
+                            <li class="max-sm:w-36 max-sm:text-xs dark:text-dark-text text-light-text font-vazir transition-normal duration-300 dark:hover:bg-dark-surface hover:bg-light-border  rounded-xl cursor-pointer w-46 h-10 text-center leading-10 sort-by-century-items"
+                                data-century="قرن چهاردهم">
                                 قرن چهارهم</li>
                         </ul>
                     </div>
                 </div>
-                <div class="w-full poet-total">
+                <div class="mt-10 w-full poet-total">
+                    <div class="hidden mt-10 w-full gap-4 flex-col items-center bg-red-600/20  py-8 rounded-xl error-element">
+                        <p class="text-center font-bold text-red-600">مشکلی پیش
+                            آمده<br> لطفا مجدد تلاش کنید
+                        </p>
+                        <button
+                            class="max-sm:py-3 gap-2 font-vazir w-40 py-5 bg-red-600 hover:bg-red-600/50 text-white rounded-xl flex items-center justify-center cursor-pointer transition-normal duration-300 reload-page">
+                            بارگذاری مجدد
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+
+                    </div>
                     <div class="w-full flex justify-center items-center loader-container">
 
                     </div>
                     <div class="hidden relative container-loadmore--wrapper">
-                        <div class="mt-10 gap-4.5 flex flex-wrap poets-container">
+                        <div class="gap-4.5 flex flex-wrap poets-container">
 
                         </div>
 

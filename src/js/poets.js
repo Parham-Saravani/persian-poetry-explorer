@@ -8,6 +8,9 @@ const loadMorePoetsBtn = document.querySelector('.load-more-poets-btn')
 const poetsContentContainer = document.querySelector('.container-loadmore--wrapper')
 const loaderContainer = document.querySelector('.loader-container')
 
+const erroeElement = document.querySelector('.error-element')
+const reloadBtn = document.querySelector('.reload-page')
+
 const sortBtn = document.querySelector('.sorte-btn')
 const sortItems = document.querySelectorAll('.sort-by-century-items')
 const sortContainer = document.querySelector('.sort-container')
@@ -15,6 +18,9 @@ const sortContainer = document.querySelector('.sort-container')
 const url = 'https://api.ganjoor.net';
 let count = 1;
 let totalpoets = [];
+
+let isDone = false;
+
 
 const onPageLoad = () => {
     themeHandler();
@@ -31,7 +37,7 @@ const fetchPoetsData = () => {
             poetsElementHandler();
         })
         .catch(() => {
-
+            erroeElementHandler();
         })
         .finally(() => {
             hideLoader();
@@ -42,9 +48,9 @@ const poetsElementHandler = () => {
     totalpoets.slice(0, 23 * count).forEach(item => {
         poetsContainer.insertAdjacentHTML('beforeend',
             `
-            <div class="relative gap-4 w-51 max-sm:w-55 max-md:w-50 max-lg:w-44 max-xl:w-38.5 max-2xl:w-36 py-4 rounded-xl dark:bg-dark-card bg-light-card shadow-xl border-2 dark:border-dark-border border-light-border">
+            <div class="relative gap-4 w-51 max-sm:w-38.5 max-md:w-50 max-lg:w-44 max-xl:w-38.5 max-2xl:w-36 py-4 rounded-xl dark:bg-dark-card bg-light-card shadow-xl border-2 dark:border-dark-border border-light-border">
                 <div class="h-full flex flex-col items-center gap-2">
-                    <img class="size-26 rounded-full popular-poet-img cursor-pointer" src="${url}${item.imageUrl}" alt="" data-poet="${item.fullUrl}">
+                    <img class="max-sm:size-20 size-26 rounded-full popular-poet-img cursor-pointer" src="${url}${item.imageUrl}" alt="" data-poet="${item.fullUrl}">
                     <p class="dark:text-dark-text text-light-text font-vazir text-card-header font-bold popular-poet-title cursor-pointer" data-poet="${item.fullUrl}">${item.name}</p>
                 </div>
             </div>            
@@ -62,13 +68,24 @@ const countHandler = () => {
     }
 }
 
+const erroeElementHandler = () => {
+    erroeElement.classList.remove('hidden')
+    erroeElement.classList.add('flex')
+}
+
 const showLoader = () => {
+    erroeElement.classList.remove('flex')
+    erroeElement.classList.add('hidden')
+
     poetsContentContainer.classList.add('hidden')
     loaderContainer.innerHTML = '<div class="loader w-4 rounded-full animate-loader aspect-square"></div>';
     loaderContainer.classList.add('h-160')
 }
 const hideLoader = () => {
-    poetsContentContainer.classList.remove('hidden')
+    if (isDone) {
+        sortBtn.classList.add('hidden')
+        poetsContentContainer.classList.remove('hidden')
+    }
     loaderContainer.innerHTML = '';
     loaderContainer.classList.remove('h-160')
 }
@@ -79,8 +96,11 @@ const sortPoetsHandler = (event) => {
     const items = event.target.closest('.sort-by-century-items')
     loadMorePoetsBtn.classList.add('hidden')
     if (items) {
+
         const currentActiveItem = document.querySelector('.sort-by-century-items.active')
-        if (event.target === currentActiveItem) return;
+        if (event.target === currentActiveItem) {
+            return;
+        };
         if (currentActiveItem) {
             currentActiveItem.classList.remove('active');
             event.target.classList.add('active')
@@ -89,6 +109,7 @@ const sortPoetsHandler = (event) => {
             sortBtn.textContent = event.target.textContent;
         }
         if (totalPoetsItem) {
+
             count = 1;
             fetchPoetsData();
             poetsElementHandler();
@@ -103,13 +124,17 @@ const fetchSortData = (century) => {
     fetch('https://api.ganjoor.net/api/ganjoor/centuries')
         .then(res => res.json())
         .then(data => {
+            isDone = true;
             console.log(century);
             const clickedCentury = data.find(item => item.name === century);
             totalpoets = clickedCentury.poets;
             poetsElementHandler();
 
         })
-        .catch(() => { console.log('There is a problem') })
+        .catch(() => {
+            isDone = false
+            erroeElementHandler()
+        })
         .finally(() => {
             hideLoader();
         })
@@ -160,11 +185,15 @@ const saveThemeInLocalStorage = (isDarkMode) => {
     localStorage.setItem('isDarkMode', isDarkMode)
 }
 
-document.addEventListener('click', sortCloseHandler)
+const reloadPage = () => {
+    location.href = location.href;
+}
 
+document.addEventListener('click', sortCloseHandler)
 document.addEventListener('DOMContentLoaded', onPageLoad)
 darkBtn.addEventListener('click', darkTheme)
 lightBtn.addEventListener('click', lightTheme)
 loadMorePoetsBtn.addEventListener('click', countHandler)
 sortContainer.addEventListener('click', sortPoetsHandler)
 sortBtn.addEventListener('click', sortContainerOpener)
+reloadBtn.addEventListener('click', reloadPage)

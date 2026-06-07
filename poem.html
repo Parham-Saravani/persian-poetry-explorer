@@ -10,31 +10,33 @@
 </head>
 
 <body class="dark:bg-dark-bg bg-light-bg">
-    <div class="container pt-5 mx-auto">
-        <header class="flex justify-between items-center">
+    <div class="container max-sm:px-3 pt-5 mx-auto">
+        <header class="max-sm:flex-row-reverse flex justify-between items-center">
             <div class="flex">
                 <button
-                    class="hidden justify-center items-center w-12 h-12 dark:text-dark-text border-2 text-xl rounded-full border-light-surface cursor-pointer dark-btn">
+                    class="hidden justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs dark-btn">
                     <i class="fa-solid fa-moon"></i>
                 </button>
                 <button
-                    class="flex justify-center items-center w-12 h-12 dark:text-dark-text border-2 text-xl rounded-full border-light-surface cursor-pointer light-btn">
+                    class="flex justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs light-btn">
                     <i class="fa-solid fa-sun"></i>
                 </button>
             </div>
             <div>
-                <ul class="flex gap-6">
+                <ul class="max-sm:pr-5 flex gap-6">
                     <li><a href="./index.html"
-                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu">صفحه اصلی</a>
-                    </li>
+                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu transition-transform duration-300 hover:scale-125">صفحه
+                            اصلی</a></li>
                     <li><a href="./poets.html"
-                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu">شاعران</a></li>
+                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu transition-transform duration-300 hover:scale-75">شاعران</a>
+                    </li>
                     <li><a href="./fall.html"
-                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu">فال حافظ</a></li>
+                            class="dark:text-dark-text text-light-text font-vazir font-medium text-menu transition-transform duration-300 hover:scale-75">فال
+                            حافظ</a></li>
                 </ul>
             </div>
-            <div class="relative">
-                <p class="dark:text-dark-text text-light-text text-2xl font-vazir font-black">Avin</p>
+            <div class="max-sm:hidden relative">
+                <p class=" dark:text-dark-text text-light-text text-2xl font-vazir font-black">Avin</p>
                 <span
                     class="-right-3 bottom-2.5 animate-pulse absolute dark:bg-dark-primary bg-light-primary w-1.5 h-1.5 rounded-full"></span>
             </div>
