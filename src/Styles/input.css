@@ -16,11 +16,11 @@
             #F3E8FF 50%,
             #EDE9FE 100%)
 }
-.sorte-btn:focus + .sort-container{
-    display: flex;
-}
-.sorte-btn:not(:focus) +.sort-container{
-    display: none;
+
+
+.sort-by-century-items.active{
+    background-color: #7C3AED;
+    color: #fff;
 }
 
 @font-face {
