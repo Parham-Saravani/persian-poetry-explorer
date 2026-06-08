@@ -109,7 +109,6 @@ const sortPoetsHandler = (event) => {
             sortBtn.textContent = event.target.textContent;
         }
         if (totalPoetsItem) {
-
             count = 1;
             fetchPoetsData();
             poetsElementHandler();
