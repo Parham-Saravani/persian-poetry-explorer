@@ -10,6 +10,8 @@ import 'swiper/css/pagination';
 const darkBtn = document.querySelector('.dark-btn')
 const lightBtn = document.querySelector('.light-btn')
 
+const pageLoader = document.querySelector('.page-loader')
+
 const randomPoemText = document.querySelector('.random-poem-text')
 const randomPoemPoet = document.querySelector('.random-poem-poet')
 const randomPoemGenerator = document.querySelector('.random-porm-btn')
@@ -176,6 +178,14 @@ const lightTheme = () => {
 const saveThemeInLocalStorage = (isDarkMode) => {
     localStorage.setItem('isDarkMode', isDarkMode)
 }
+
+
+const pageloading = () => {
+    pageLoader.classList.remove('fixed')
+    pageLoader.classList.add('hidden')
+}
+
+window.addEventListener('load', pageloading)
 document.addEventListener('DOMContentLoaded', onPageLoad)
 randomPoemGenerator.addEventListener('click', randomPoemHandler)
 darkBtn.addEventListener('click', darkTheme)
