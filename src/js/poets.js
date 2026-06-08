@@ -39,13 +39,35 @@ const fetchPoetsData = () => {
             totalpoets = data;
             poetsElementHandler();
         })
-        .catch(() => {
+        .catch((err) => {
+            console.log(err);
+            isDone = false;
             erroeElementHandler();
         })
         .finally(() => {
             hideLoader();
         })
 }
+const fetchSortData = (century) => {
+    showLoader();
+    fetch('https://api.ganjoor.net/api/ganjoor/centuries')
+        .then(res => res.json())
+        .then(data => {
+            const clickedCentury = data.find(item => item.name === century);
+            totalpoets = clickedCentury.poets;
+            poetsElementHandler();
+
+        })
+        .catch((err) => {
+            console.log(err);
+            isDone = false;
+            erroeElementHandler()
+        })
+        .finally(() => {
+            hideLoader();
+        })
+}
+
 const poetsElementHandler = () => {
     poetsContainer.innerHTML = '';
     totalpoets.slice(0, 23 * count).forEach(item => {
@@ -72,22 +94,21 @@ const countHandler = () => {
 }
 
 const erroeElementHandler = () => {
-    console.log('1213');
-    
+    // totalpoets = [];
+    // count = 1;
     erroeElement.classList.remove('hidden')
     erroeElement.classList.add('flex')
 }
 
 const showLoader = () => {
-    erroeElement.classList.remove('flex')
-    erroeElement.classList.add('hidden')
-
     poetsContentContainer.classList.add('hidden')
     loaderContainer.innerHTML = '<div class="loader w-4 rounded-full animate-loader aspect-square"></div>';
     loaderContainer.classList.add('h-60')
 }
 const hideLoader = () => {
     if (isDone) {
+        erroeElement.classList.remove('flex');
+        erroeElement.classList.add('hidden')
         poetsContentContainer.classList.remove('hidden')
     }
     loaderContainer.innerHTML = '';
@@ -96,22 +117,22 @@ const hideLoader = () => {
 
 //sort poets 
 const sortPoetsHandler = (event) => {
+    erroeElement.classList.remove('flex');
+    erroeElement.classList.add('hidden')
+
     const totalPoetsItem = event.target.closest('.total-poets')
     const items = event.target.closest('.sort-by-century-items')
     loadMorePoetsBtn.classList.add('hidden')
     if (items) {
-
-        const currentActiveItem = document.querySelector('.sort-by-century-items.active')
+        const currentActiveItem = document.querySelector('.sort-by-century-items.active');
         if (event.target === currentActiveItem) {
             return;
         };
-        if (currentActiveItem) {
-            currentActiveItem.classList.remove('active');
-            event.target.classList.add('active')
-            fetchSortData(event.target.dataset.century);
-            sortContainer.classList.add('hidden');
-            sortBtn.textContent = event.target.textContent;
-        }
+        currentActiveItem.classList.remove('active');
+        event.target.classList.add('active')
+        sortContainer.classList.add('hidden');
+        sortBtn.textContent = event.target.textContent;
+
         if (totalPoetsItem) {
             count = 1;
             fetchPoetsData();
@@ -119,29 +140,14 @@ const sortPoetsHandler = (event) => {
             loadMorePoetsBtn.classList.remove('hidden')
             return;
         }
+        if (currentActiveItem) {
+            fetchSortData(event.target.dataset.century);
+        }
+
     }
 }
 
-const fetchSortData = (century) => {
-    showLoader();
-    fetch('https://api.ganjoor.net/api/ganjoor/centuries')
-        .then(res => res.json())
-        .then(data => {
-            isDone = true;
-            console.log(century);
-            const clickedCentury = data.find(item => item.name === century);
-            totalpoets = clickedCentury.poets;
-            poetsElementHandler();
 
-        })
-        .catch(() => {
-            isDone = false
-            erroeElementHandler()
-        })
-        .finally(() => {
-            hideLoader();
-        })
-}
 
 const sortContainerOpener = () => {
     sortContainer.classList.remove('hidden')

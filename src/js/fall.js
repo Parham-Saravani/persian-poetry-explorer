@@ -55,6 +55,7 @@ const createFallHandler = (data) => {
     poetNumberText.insertAdjacentHTML('beforeend', `${data.title} از دیوان حافظ`)
     poetText.insertAdjacentHTML('beforeend', data.htmlText)
     poetSummeryText.insertAdjacentHTML('beforeend', data.poemSummary)
+    
     const poets = document.querySelectorAll('.b')
     poets.forEach(poet => {
         const firstChildText = poet.firstElementChild.textContent.trim();
