@@ -125,4 +125,7 @@
     --animate-loader : loader 1s infinite linear alternate;
 }
 
+@plugin "tailwind-scrollbar";
+
+
 @custom-variant dark (&:where(.dark, .dark *));
