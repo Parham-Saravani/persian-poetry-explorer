@@ -5,6 +5,8 @@ const lightBtn = document.querySelector('.light-btn')
 
 const takeFallBtn = document.querySelector('.take-fall')
 
+const pageLoader = document.querySelector('.page-loader')
+
 const poetNumberText = document.querySelector('.fall-poet-number')
 const poetText = document.querySelector('.fall-poet')
 const poetSummeryText = document.querySelector('.fall-summery')
@@ -111,6 +113,12 @@ const saveThemeInLocalStorage = (isDarkMode) => {
 }
 
 
+const pageloading = () => {
+    pageLoader.classList.remove('fixed')
+    pageLoader.classList.add('hidden')
+}
+
+window.addEventListener('load', pageloading)
 document.addEventListener('DOMContentLoaded', onPageLoad)
 takeFallBtn.addEventListener('click', fetchFall)
 darkBtn.addEventListener('click', darkTheme)

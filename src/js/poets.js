@@ -8,6 +8,8 @@ const loadMorePoetsBtn = document.querySelector('.load-more-poets-btn')
 const poetsContentContainer = document.querySelector('.container-loadmore--wrapper')
 const loaderContainer = document.querySelector('.loader-container')
 
+const pageLoader = document.querySelector('.page-loader')
+
 const erroeElement = document.querySelector('.error-element')
 const reloadBtn = document.querySelector('.reload-page')
 
@@ -33,6 +35,7 @@ const fetchPoetsData = () => {
     fetch('https://api.ganjoor.net/api/ganjoor/poets')
         .then(res => res.json())
         .then(data => {
+            isDone = true;
             totalpoets = data;
             poetsElementHandler();
         })
@@ -48,7 +51,7 @@ const poetsElementHandler = () => {
     totalpoets.slice(0, 23 * count).forEach(item => {
         poetsContainer.insertAdjacentHTML('beforeend',
             `
-            <div class="relative gap-4 w-51 max-sm:w-38.5 max-md:w-50 max-lg:w-44 max-xl:w-38.5 max-2xl:w-36 py-4 rounded-xl dark:bg-dark-card bg-light-card shadow-xl border-2 dark:border-dark-border border-light-border">
+            <div class="relative gap-4 w-51 max-sm:w-42 max-md:w-50 max-lg:w-44 max-xl:w-38.5 max-2xl:w-36 py-4 rounded-xl dark:bg-dark-card bg-light-card shadow-xl border-2 dark:border-dark-border border-light-border">
                 <div class="h-full flex flex-col items-center gap-2">
                     <img class="max-sm:size-20 size-26 rounded-full popular-poet-img cursor-pointer" src="${url}${item.imageUrl}" alt="" data-poet="${item.fullUrl}">
                     <p class="dark:text-dark-text text-light-text font-vazir text-card-header font-bold popular-poet-title cursor-pointer" data-poet="${item.fullUrl}">${item.name}</p>
@@ -69,6 +72,8 @@ const countHandler = () => {
 }
 
 const erroeElementHandler = () => {
+    console.log('1213');
+    
     erroeElement.classList.remove('hidden')
     erroeElement.classList.add('flex')
 }
@@ -79,15 +84,14 @@ const showLoader = () => {
 
     poetsContentContainer.classList.add('hidden')
     loaderContainer.innerHTML = '<div class="loader w-4 rounded-full animate-loader aspect-square"></div>';
-    loaderContainer.classList.add('h-160')
+    loaderContainer.classList.add('h-60')
 }
 const hideLoader = () => {
     if (isDone) {
-        sortBtn.classList.add('hidden')
         poetsContentContainer.classList.remove('hidden')
     }
     loaderContainer.innerHTML = '';
-    loaderContainer.classList.remove('h-160')
+    loaderContainer.classList.remove('h-60')
 }
 
 //sort poets 
@@ -188,6 +192,14 @@ const reloadPage = () => {
     location.href = location.href;
 }
 
+
+
+const pageloading = () => {
+    pageLoader.classList.remove('fixed')
+    pageLoader.classList.add('hidden')
+}
+
+window.addEventListener('load', pageloading)
 document.addEventListener('click', sortCloseHandler)
 document.addEventListener('DOMContentLoaded', onPageLoad)
 darkBtn.addEventListener('click', darkTheme)
