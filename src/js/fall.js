@@ -55,26 +55,28 @@ const createFallHandler = (data) => {
     poetNumberText.insertAdjacentHTML('beforeend', `${data.title} از دیوان حافظ`)
     poetText.insertAdjacentHTML('beforeend', data.htmlText)
     poetSummeryText.insertAdjacentHTML('beforeend', data.poemSummary)
-    
+    console.log(poetText);
+
     const poets = document.querySelectorAll('.b')
     poets.forEach(poet => {
-        const firstChildText = poet.firstElementChild.textContent.trim();
-        const secondChildText = poet.lastElementChild.textContent.trim();
+        const firstChildText = poet.firstElementChild.firstElementChild.textContent.trim();
+        const secondChildText = poet.lastElementChild.firstElementChild.textContent.trim();
+       
 
         poet.innerHTML = '';
         const container = document.createElement('div')
-        container.className = 'relative flex items-center justify-center';
+        container.className = 'relative flex justify-center';
 
-        container.insertAdjacentHTML('beforeend', `<span class="right-poet">${firstChildText}</span> <span class="divider">*</span> <span class="left-poet">${firstChildText}</span>`)
+        container.insertAdjacentHTML('beforeend', `<span class="right-poet">${firstChildText}</span> <span class="divider">*</span> <span class="left-poet">${secondChildText}</span>`)
 
         const divider = container.querySelector('.divider')
         divider.className += 'absolute font-bold text-xl dark:text-dark-primary text-light-primary font-vazir';
 
         const rightPoet = container.querySelector('.right-poet')
-        rightPoet.className += 'block w-80 absolute -right-90 font-vazir max-xl:-right-76 max-xl:w-70 max-xl:text-[13px] max-lg:text-[15px] max-md:text-[12px] max-md:w-56 max-md:-right-70 max-sm:text-[10px] max-sm:-right-39 max-sm:w-35'
+        rightPoet.className += 'block w-80 absolute -right-90 font-vazir max-xl:-right-76 max-xl:w-70 max-xl:text-[13px] max-lg:text-[15px] max-md:text-[12px] max-md:w-56 max-md:-right-70 max-sm:text-[10px] max-sm:-right-45 max-sm:w-43'
 
         const leftPoet = container.querySelector('.left-poet')
-        leftPoet.className += 'block w-80 absolute -left-110 font-vazir max-xl:-left-86 max-xl:w-70 max-xl:text-[13px] max-lg:text-[15px] max-md:text-[12px] max-md:w-56 max-md:-left-75 max-sm:text-[10px] max-sm:-left-39 max-sm:w-35';
+        leftPoet.className += 'block w-80 absolute -left-110 font-vazir max-xl:-left-86 max-xl:w-70 max-xl:text-[13px] max-lg:text-[15px] max-md:text-[12px] max-md:w-56 max-md:-left-75 max-sm:text-[10px] max-sm:-left-46 max-sm:w-43';
 
         poet.append(container)
     })

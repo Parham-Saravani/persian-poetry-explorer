@@ -89,7 +89,7 @@ const randomPoemHandler = () => {
         alig.forEach((text) => {
             randomPoemText.insertAdjacentHTML('beforeend',
                 `
-                <p class="max-sm:text-[16px]">${text}<p>
+                <p class="max-sm:text-[13px]">${text}<p>
                 `
             )
         })
