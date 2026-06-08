@@ -1121,6 +1121,11 @@
       height: calc(var(--spacing) * 80);
     }
   }
+  .max-xl\:w-35 {
+    @media (width < 80rem) {
+      width: calc(var(--spacing) * 35);
+    }
+  }
   .max-xl\:w-38\.5 {
     @media (width < 80rem) {
       width: calc(var(--spacing) * 38.5);
@@ -1248,6 +1253,21 @@
       right: calc(var(--spacing) * -35);
     }
   }
+  .max-sm\:-right-37 {
+    @media (width < 40rem) {
+      right: calc(var(--spacing) * -37);
+    }
+  }
+  .max-sm\:-right-39 {
+    @media (width < 40rem) {
+      right: calc(var(--spacing) * -39);
+    }
+  }
+  .max-sm\:-right-40 {
+    @media (width < 40rem) {
+      right: calc(var(--spacing) * -40);
+    }
+  }
   .max-sm\:-right-50 {
     @media (width < 40rem) {
       right: calc(var(--spacing) * -50);
@@ -1266,6 +1286,16 @@
   .max-sm\:-left-37 {
     @media (width < 40rem) {
       left: calc(var(--spacing) * -37);
+    }
+  }
+  .max-sm\:-left-38 {
+    @media (width < 40rem) {
+      left: calc(var(--spacing) * -38);
+    }
+  }
+  .max-sm\:-left-39 {
+    @media (width < 40rem) {
+      left: calc(var(--spacing) * -39);
     }
   }
   .max-sm\:-left-40 {
@@ -1329,6 +1359,11 @@
       width: calc(var(--spacing) * 32);
     }
   }
+  .max-sm\:w-34 {
+    @media (width < 40rem) {
+      width: calc(var(--spacing) * 34);
+    }
+  }
   .max-sm\:w-35 {
     @media (width < 40rem) {
       width: calc(var(--spacing) * 35);
@@ -1339,6 +1374,11 @@
       width: calc(var(--spacing) * 36);
     }
   }
+  .max-sm\:w-38 {
+    @media (width < 40rem) {
+      width: calc(var(--spacing) * 38);
+    }
+  }
   .max-sm\:w-40 {
     @media (width < 40rem) {
       width: calc(var(--spacing) * 40);
@@ -1347,6 +1387,26 @@
   .max-sm\:w-42 {
     @media (width < 40rem) {
       width: calc(var(--spacing) * 42);
+    }
+  }
+  .max-sm\:w-43 {
+    @media (width < 40rem) {
+      width: calc(var(--spacing) * 43);
+    }
+  }
+  .max-sm\:w-44 {
+    @media (width < 40rem) {
+      width: calc(var(--spacing) * 44);
+    }
+  }
+  .max-sm\:w-44\.5 {
+    @media (width < 40rem) {
+      width: calc(var(--spacing) * 44.5);
+    }
+  }
+  .max-sm\:w-45 {
+    @media (width < 40rem) {
+      width: calc(var(--spacing) * 45);
     }
   }
   .max-sm\:w-430 {
@@ -1362,6 +1422,11 @@
   .max-sm\:flex-row-reverse {
     @media (width < 40rem) {
       flex-direction: row-reverse;
+    }
+  }
+  .max-sm\:justify-center {
+    @media (width < 40rem) {
+      justify-content: center;
     }
   }
   .max-sm\:px-3 {

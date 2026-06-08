@@ -73,7 +73,7 @@ const poetsElementHandler = () => {
     totalpoets.slice(0, 23 * count).forEach(item => {
         poetsContainer.insertAdjacentHTML('beforeend',
             `
-            <div class="relative gap-4 w-51 max-sm:w-42 max-md:w-50 max-lg:w-44 max-xl:w-38.5 max-2xl:w-36 py-4 rounded-xl dark:bg-dark-card bg-light-card shadow-xl border-2 dark:border-dark-border border-light-border">
+            <div class="relative gap-4 w-51 max-sm:w-35 max-md:w-50 max-lg:w-44 max-xl:w-38.5 max-2xl:w-36 py-4 rounded-xl dark:bg-dark-card bg-light-card shadow-xl border-2 dark:border-dark-border border-light-border">
                 <div class="h-full flex flex-col items-center gap-2">
                     <img class="max-sm:size-20 size-26 rounded-full popular-poet-img cursor-pointer" src="${url}${item.imageUrl}" alt="" data-poet="${item.fullUrl}">
                     <p class="dark:text-dark-text text-light-text font-vazir text-card-header font-bold popular-poet-title cursor-pointer" data-poet="${item.fullUrl}">${item.name}</p>
