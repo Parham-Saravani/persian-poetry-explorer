@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" class="dark">
+<html lang="fa" dir="rtl" class="dark dark:scrollbar-thumb-dark-card dark:scrollbar-track-dark-bg scrollbar-thumb-light-border scrollbar-track-light-bg">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 
 </head>
 
-<body class="dark:bg-dark-bg bg-light-bg">
+<body class="dark:bg-dark-bg ">
     <!-- Loader Element -->
     <div
         class="fixed flex justify-center items-center w-full h-full dark:bg-dark-bg bg-light-bg z-50 top-0 right-0 page-loader">
@@ -60,58 +60,137 @@
     </div>
 
     <div class="container max-sm:px-3 mx-auto">
-        <main class="mt-10 ">
+        <main class="mt-10 pb-5">
+            <!-- page winthout parameter error -->
             <div class="hidden h-100 w-full justify-center items-center not-found-poet-element">
                 <div
                     class="flex flex-col items-center gap-4 py-10 px-20 dark:bg-dark-card bg-light-card border-2 dark:border-dark-border border-light-border rounded-xl">
                     <p class="font-vazir text-xl font-bold dark:text-dark-text text-light-text">شاعر مورد نظر یافت نشد
                     </p>
                     <a href="poets.html"
-                        class="font-vazir dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary px-3 py-3 rounded-xl transition-normal duration-300 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover">رفتن
+                        class="font-vazir dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary px-3 py-3 rounded-xl transition-normal duration-300 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover hover:-translate-y-0.5">رفتن
                         به صفحه شاعرها</a>
                 </div>
             </div>
 
-            <div class="hidden poet-Detail">
-                <div class="flex">
-                    <div
-                        class="w-full px-7 flex gap-10 items-center dark:bg-dark-card bg-light-card rounded-xl border-2 dark:border-dark-border border-light-border py-6">
-                        <div>
-                            <img class="shadow-2xl dark:shadow-dark-primary size-50 border-4 rounded-full dark:border-dark-primary border-light-primary poet-image"
-                                alt="">
+            <!-- Page Skeleton Loader-->
+            <div class="skeleton-loader">
+                <div
+                    class="flex dark:bg-dark-card bg-light-card rounded-xl border-2 dark:border-dark-border border-light-border py-6">
+                    <div class="w-full px-7 flex justify-center flex-col items-center ">
+                        <div
+                            class="max-sm:size-30 dark:bg-slate-700 bg-slate-40 size-50 rounded-full animate-pulse">
                         </div>
-                        <div>
-                            <h1
-                                class="mt-4 font-vazir font-bold text-4xl dark:text-dark-text text-light-text poet-name">
-                            </h1>
-                            <div class="mt-4 flex gap-6">
-                                <span
-                                    class="flex items-center gap-1 font-vazir font-normal dark:text-dark-text text-light-text">
-                                    <i
-                                        class="fa-solid fa-location-dot text-xl dark:text-dark-primary text-light-primary"></i>
-                                    <p class="poet-place"></p>
-                                </span>
+                        <div class="mt-5 dark:bg-slate-700 bg-slate-400 w-50 h-10 rounded-xl animate-pulse">
+                        </div>
+                        <div class="mt-10 dark:bg-slate-700 bg-slate-400 w-300 h-30 rounded-xl animate-pulse">
 
-                                <span class="dark:bg-dark-primary bg-light-primary rounded-xl w-0.5 h-15 block"></span>
-
-                                <span
-                                    class="flex items-center gap-1.5 font-vazir font-normal dark:text-dark-text text-light-text">
-                                    <i
-                                        class="fa-solid fa-calendar text-xl dark:text-dark-primary text-light-primary"></i>
-                                    <p class="font-vazir text-xs poet-year"></p>
-                                </span>
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div
                     class="relative mt-4 px-7 py-6 dark:bg-dark-card bg-light-card rounded-xl border-2 dark:border-dark-border border-light-border">
+                    <div
+                        class="text-xl font-vazir dark:text-dark-text text-light-text font-bold relative pr-5 before:content-[''] before:absolute before:w-2.5 before:h-2.5 dark:before:bg-dark-primary before:bg-light-primary before:rounded-full before:top-0 before:bottom-0 before:my-auto before:right-0 ">
+                        <p class="mt-5 w-50 h-10 dark:bg-slate-700 bg-slate-400 animate-pulse rounded-xl"></p>
+                    </div>
+                    <div class="mt-5 w-full h-40 dark:bg-slate-700 bg-slate-400 animate-pulse rounded-xl">
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Page Content -->
+            <div class="poet-Detail hidden">
+                <!-- poet image and name and detail -->
+                <div
+                    class="flex dark:bg-dark-card bg-light-card rounded-xl border-2 dark:border-dark-border border-light-border py-6">
+                    <div class="w-full flex flex-col justify-center items-center">
+                        <!-- poet image -->
+                        <div
+                            class="max-sm:size-30 bg-red-50 size-45 rounded-full shadow-2xl dark:shadow-dark-primary shadow-light-primary">
+                            <img class="max-sm:size-30 dark:bg-dark-bg bg-light-bg size-45 rounded-full poet-image border-4 dark:border-dark-primary border-light-primary"
+                                alt="">
+                        </div>
+
+                        <!-- poet name -->
+                        <div class="mt-5">
+                            <h1 class="font-vazir font-bold text-4xl dark:text-dark-text text-light-text poet-name">
+                            </h1>
+                        </div>
+
+                        <div>
+                            <p class="short-name"></p>
+                        </div>
+                        <!-- poet death birth detail-->
+                        <div class="mt-10 flex gap-10">
+                            <div
+                                class="relative flex flex-col dark:bg-dark-surface bg-light-surface border-2 dark:border-dark-border border-light-border rounded-xl py-5 px-10 h-30 w-65">
+                                <i
+                                    class="fa-solid fa-location-dot absolute left-4 top-5 text-4xl dark:text-dark-primary text-light-primary"></i>
+                                <div class="absolute right-10 top-4 flex flex-col items-center">
+                                    <p
+                                        class="text-[18px] font-vazir font-normal dark:text-dark-primary text-light-primary">
+                                        زادگاه
+                                    </p>
+                                    <h1
+                                        class="font-vazir text-[17px] font-normal dark:text-dark-text text-light-text birth-place">
+                                    </h1>
+                                    <p
+                                        class="mt-1 text-[14px] font-vazir font-normal dark:text-dark-text-secondary text-light-text-secondary">
+                                        ایران</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="relative flex flex-col dark:bg-dark-surface bg-light-surface border-2 dark:border-dark-border border-light-border rounded-xl py-5 px-10 h-30 w-65">
+                                <i
+                                    class="fa-solid fa-seedling absolute left-4 top-5 text-4xl dark:text-dark-primary text-light-primary"></i>
+                                <div class="absolute right-10 top-4 flex flex-col items-center">
+                                    <p
+                                        class="text-[18px] font-vazir font-normal dark:text-dark-primary text-light-primary">
+                                        تولد</p>
+                                    <h1
+                                        class="font-vazir text-[17px] font-normal dark:text-dark-text text-light-text birth-year">
+                                    </h1>
+                                    <p
+                                        class="mt-1 text-[14px] font-vazir font-normal dark:text-dark-text-secondary text-light-text-secondary birth-place">
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="relative flex flex-col dark:bg-dark-surface bg-light-surface border-2 dark:border-dark-border border-light-border rounded-xl py-5 px-10 h-30 w-65">
+                                <i
+                                    class="fa-solid fa-feather absolute left-4 top-5 text-4xl dark:text-dark-primary text-light-primary"></i>
+                                <div class="absolute right-10 top-4 flex flex-col items-center">
+                                    <p
+                                        class="text-[18px] font-vazir font-normal dark:text-dark-primary text-light-primary">
+                                        وفات</p>
+                                    <h1
+                                        class="font-vazir text-[17px] font-normal dark:text-dark-text text-light-text death-year">
+                                    </h1>
+                                    <p
+                                        class="mt-1 text-[14px] font-vazir font-normal dark:text-dark-text-secondary text-light-text-secondary death-place">
+                                    </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- poet about-->
+                <div
+                    class="mt-4 px-7 overflow-hidden py-6 transition-all duration-300 dark:bg-dark-card bg-light-card rounded-xl border-2 dark:border-dark-border border-light-border about-container">
                     <h1
                         class="text-xl font-vazir dark:text-dark-text text-light-text font-bold relative pr-5 before:content-[''] before:absolute before:w-2.5 before:h-2.5 dark:before:bg-dark-primary before:bg-light-primary before:rounded-full before:top-0 before:bottom-0 before:my-auto before:right-0  about-title">
                     </h1>
+
                     <div
-                        class="line-clamp-3 leading-7 mt-4 about-text font-normal text-justify font-vazir dark:text-dark-text text-light-text">
+                        class="mt-4 ml-1 mr-auto line-clamp-3 leading-7 about-text font-normal text-justify font-vazir dark:text-dark-text text-light-text">
                     </div>
                     <div class="w-full flex justify-center mt-4">
                         <button
@@ -120,9 +199,13 @@
                     </div>
                 </div>
 
-                <div>
+                <!-- poet works -->
+                 <div class="swiper">
+                    <div class="swiper-wrapper">
 
-                </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                 </div>
             </div>
         </main>
     </div>

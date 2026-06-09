@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import '../style.css'
 
 
@@ -8,20 +7,29 @@ const lightBtn = document.querySelector('.light-btn')
 const pageLoader = document.querySelector('.page-loader')
 
 //! poet detail
+
+const skeletonLoader = document.querySelector('.skeleton-loader')
+
 const poetImage = document.querySelector('.poet-image')
 const poetName = document.querySelector('.poet-name')
-const poetPlace = document.querySelector('.poet-place')
-const poetYear = document.querySelector('.poet-year')
+const poetShortName = document.querySelector('.short-name')
+
+const birthPlace = document.querySelectorAll('.birth-place')
+const deathYear = document.querySelector('.death-year')
+const deathPlace = document.querySelector('.death-place')
+const birthYear = document.querySelector('.birth-year')
+
+const aboutContainer = document.querySelector('.about-container')
 const aboutTitle = document.querySelector('.about-title')
 const aboutText = document.querySelector('.about-text')
 
 const showAllAboutBtn = document.querySelector('.show-all-about-text-btn')
 
 const poetNotFoundElement = document.querySelector('.not-found-poet-element');
-const poetDetails = document.querySelector('.poet-Detail')
+const poetDetailsContainer = document.querySelector('.poet-Detail')
 
 const url = 'https://api.ganjoor.net';
-let isAllAboutTextAvtive = false;
+let isAllAboutTextActive = false;
 
 const onPageLoad = () => {
     isPoetIdAvailable()
@@ -33,9 +41,9 @@ const isPoetIdAvailable = () => {
     const isAvailable = urlParametrs.has('poetId');
     if (isAvailable) {
         fetchPoetData();
-        poetDetails.classList.remove('hidden')
         return;
     }
+    navigator.clipboard.writeText()
     poetNotFoundElement.classList.remove('hidden')
     poetNotFoundElement.classList.add('flex')
 
@@ -46,6 +54,7 @@ const fetchPoetData = () => {
     fetch(`https://api.ganjoor.net/api/ganjoor/poet/${poetId}?catPoems=true`)
         .then(res => res.json())
         .then(data => {
+            document.title = `گنجینه شعر فارسی | ${data.cat.title}`
             console.log(data)
             createPoetElements(data)
         })
@@ -53,7 +62,8 @@ const fetchPoetData = () => {
 
         })
         .finally(() => {
-
+            skeletonLoader.classList.add('hidden');
+            poetDetailsContainer.classList.remove('hidden')
         })
 }
 const takePoetId = () => {
@@ -83,14 +93,42 @@ const centuryFormatter = (num) => {
 }
 
 //! create poet elements
-const createPoetElements = (data) => {
+const createPoetElements = (data) => {    
     poetImage.setAttribute('src', `${url}${data.poet.imageUrl}`);
-    poetName.textContent = data.cat.title;
-    poetPlace.textContent = data.poet.birthPlace;
-    // poetYear.textContent = `${centuryFormatter(data.poet.birthYearInLHijri)}`;
-    aboutTitle.textContent = `درباره ${data.poet.name}`;
+    poetName.textContent = data.poet.name;
+    birthPlace.forEach(element => {
+        if (data.poet.birthPlace) {
+            element.textContent = data.poet.birthPlace;
+        } else {
+            element.textContent = '__';
+        }
+    })
 
+    validatePlacesAndYears(deathYear, data.poet.deathYearInLHijri, true)
+    validatePlacesAndYears(deathPlace, data.poet.deathPlace, false)
+    validatePlacesAndYears(birthYear, data.poet.birthYearInLHijri, true)
+
+    aboutTitle.textContent = `درباره ${data.poet.name}`;
     aboutText.insertAdjacentHTML('beforeend', data.cat.descriptionHtml)
+    const isOk = aboutText.scrollHeight > aboutText.offsetHeight;
+    console.log(isOk);
+
+}
+
+const validatePlacesAndYears = (element, data, isYear) => {
+    if (isYear) {
+        if (data) {
+            element.textContent = `${data} هجری`;
+        } else {
+            element.textContent = '__';
+        }
+    } else {
+        if (data) {
+            element.textContent = data;
+        } else {
+            element.textContent = '__';
+        }
+    }
 }
 
 const pageloading = () => {
@@ -130,19 +168,26 @@ const saveThemeInLocalStorage = (isDarkMode) => {
 
 
 const showOtherAboutText = (event) => {
-    if (!isAllAboutTextAvtive) {
-        isAllAboutTextAvtive = true;
+    if (!isAllAboutTextActive) {
+        isAllAboutTextActive = true;
         event.target.textContent = 'نمایش کمتر';
+        aboutContainer.classList.remove('h-60!')
+        aboutContainer.style.height = `${aboutContainer.offsetHeight}px`
         aboutText.classList.remove('line-clamp-3')
+        requestAnimationFrame(() => {
+            aboutContainer.style.height = `${aboutContainer.scrollHeight}px`;
+        })
         return;
     }
-
-    isAllAboutTextAvtive = false;
+    console.log(aboutContainer.scrollHeight);
+    isAllAboutTextActive = false;
     event.target.textContent = 'نمایش بیشتر';
+    aboutContainer.style.height = `${aboutContainer.offsetHeight}px`
     aboutText.classList.add('line-clamp-3')
-
-
-
+    aboutContainer.classList.add('h-60!')
+    requestAnimationFrame(() => {
+        aboutContainer.classList.add('h-60!')
+    })
 }
 
 window.addEventListener('load', pageloading)
