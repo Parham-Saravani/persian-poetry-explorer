@@ -1,10 +1,22 @@
 import '../style.css'
+import Swiper from 'swiper'
+import { Pagination } from 'swiper/modules'
+import 'swiper/css';
+
+const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 'auto',
+    grabCursor: true,
+    spaceBetween: 20,
+    Pagination: {
+        el: '.swiper-pagination'
+    }
+})
 
 
 const darkBtn = document.querySelector('.dark-btn')
 const lightBtn = document.querySelector('.light-btn')
-
-const pageLoader = document.querySelector('.page-loader')
 
 //! poet detail
 
@@ -27,6 +39,11 @@ const showAllAboutBtn = document.querySelector('.show-all-about-text-btn')
 
 const poetNotFoundElement = document.querySelector('.not-found-poet-element');
 const poetDetailsContainer = document.querySelector('.poet-Detail')
+
+const worksTotalContainer = document.querySelector('.works-total-container')
+const poetWorksContainer = document.querySelector('.works-container')
+const poemsContainer = document.querySelector('.poems-container')
+
 
 const url = 'https://api.ganjoor.net';
 let isAllAboutTextActive = false;
@@ -93,9 +110,10 @@ const centuryFormatter = (num) => {
 }
 
 //! create poet elements
-const createPoetElements = (data) => {    
+const createPoetElements = (data) => {
     poetImage.setAttribute('src', `${url}${data.poet.imageUrl}`);
     poetName.textContent = data.poet.name;
+
     birthPlace.forEach(element => {
         if (data.poet.birthPlace) {
             element.textContent = data.poet.birthPlace;
@@ -110,9 +128,10 @@ const createPoetElements = (data) => {
 
     aboutTitle.textContent = `درباره ${data.poet.name}`;
     aboutText.insertAdjacentHTML('beforeend', data.cat.descriptionHtml)
-    const isOk = aboutText.scrollHeight > aboutText.offsetHeight;
-    console.log(isOk);
 
+
+    poemWorksValidator(data.cat.children, poetWorksContainer)
+    poemValidator(data.cat.poems, poemsContainer)
 }
 
 const validatePlacesAndYears = (element, data, isYear) => {
@@ -131,9 +150,56 @@ const validatePlacesAndYears = (element, data, isYear) => {
     }
 }
 
-const pageloading = () => {
-    pageLoader.classList.remove('fixed')
-    pageLoader.classList.add('hidden')
+const poemValidator = (data, element) => {
+    if (!data.length) {
+        element.insertAdjacentHTML('beforeend',
+            `
+            <p class="flex justify-center text-[14px] text-center font-vazir font-bold bg-red-600/20 py-3 px-16 text-red-600 rounded-xl">برای این شاعر شعری یافت نشد</p>
+            `
+        )
+    } else {
+        data.forEach((poem) => {
+            element.insertAdjacentHTML('beforeend',
+                `
+            <div class="w-full flex justify-between items-center py-3 px-5 rounded-xl dark:bg-dark-surface bg-light-surface transition-normal duration-300">
+                <div class="max-sm:gap-5 flex items-center gap-10">
+                    <i class="fa-solid fa-book-open dark:text-dark-primary text-light-primary"></i>
+                    <a>
+                        <h1 class="max-sm:text-xs font-vazir font-bold text-[16px] dark:text-dark-text text-light-text transition-normal duration-300 hover:scale-105 cursor-pointer">${poem.title}</h1>
+                    </a>
+                </div>
+                <a href="" class="max-sm:text-xs py-1 px-1.5 text-[15px] rounded-full dark:text-dark-text text-light-text dark:bg-dark-card transition-normal duration-300 hover:scale-105">
+                     <i
+                    class="fa-solid fa-chevron-left flex items-center justify-center"></i>
+                </a>
+            </div>
+            `
+            )
+        })
+
+    }
+}
+const poemWorksValidator = (data, element) => {
+    if (!data.length) {
+        element.parentElement.remove();
+        worksTotalContainer.insertAdjacentHTML('beforeend',
+            `
+            <p class="mt-3 flex justify-center text-[14px] text-center font-vazir font-bold bg-red-600/20 py-3 px-16 text-red-600 rounded-xl">برای این شاعر اثری یافت نشد</p>
+            `
+        )
+    } else {
+        data.forEach((work) => {
+            element.insertAdjacentHTML('beforeend',
+                `
+            <a class="swiper-slide relative flex flex-col dark:bg-dark-surface bg-light-surface rounded-xl py-5 px-10 h-25! w-50! max-sm:w-45! max-sm:h-20! cursor-pointer transition-normal duration-300">
+                <i class="fa-solid fa-book-open absolute left-4 top-5.5 max-sm:top-5 text-5xl max-sm:text-4xl dark:text-dark-primary text-light-primary"></i>
+                <h1 class="absolute right-0 top-9 font-vazir text-[18px] max-sm:text-[17px] max-sm:right-0 max-sm:top-6 w-30 leading-6 text-center font-normal dark:text-dark-text text-light-text death-year">${work.title}</h1>
+            </a>
+            `
+            )
+        })
+    }
+
 }
 
 //! Theme handlers
@@ -190,7 +256,6 @@ const showOtherAboutText = (event) => {
     })
 }
 
-window.addEventListener('load', pageloading)
 document.addEventListener('DOMContentLoaded', onPageLoad)
 darkBtn.addEventListener('click', darkTheme)
 lightBtn.addEventListener('click', lightTheme)
