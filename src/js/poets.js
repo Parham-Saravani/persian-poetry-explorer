@@ -75,8 +75,12 @@ const poetsElementHandler = () => {
             `
             <div class="relative gap-4 w-51 max-sm:w-35 max-md:w-50 max-lg:w-44 max-xl:w-38.5 max-2xl:w-36 py-4 rounded-xl dark:bg-dark-card bg-light-card shadow-xl border-2 dark:border-dark-border border-light-border">
                 <div class="h-full flex flex-col items-center gap-2">
-                    <img class="max-sm:size-20 size-26 rounded-full popular-poet-img cursor-pointer" src="${url}${item.imageUrl}" alt="" data-poet="${item.fullUrl}">
-                    <p class="dark:text-dark-text text-light-text font-vazir text-card-header font-bold popular-poet-title cursor-pointer" data-poet="${item.fullUrl}">${item.name}</p>
+                    <a href="/poet.html?poetId=${item.id}">
+                        <img class="max-sm:size-20 size-26 rounded-full poet-img cursor-pointer" src="${url}${item.imageUrl}" alt="">
+                    </a>
+                    <a href="/poet.html?poetId=${item.id}">
+                        <p class="max-sm:text-[12px] max-xl:text-[13px] text-center dark:text-dark-text text-light-text font-vazir text-card-header font-bold poet-title cursor-pointer">${item.name}</p>
+                    </a>
                 </div>
             </div>            
             `
@@ -199,10 +203,24 @@ const reloadPage = () => {
 }
 
 
-
 const pageloading = () => {
     pageLoader.classList.remove('fixed')
     pageLoader.classList.add('hidden')
+}
+
+const moveToPoetPage = (event) => {
+    const poetImage = event.target.closest('.poet-img')
+    const poetTitle = event.target.closest('.poet-title')
+    if (poetImage) {
+        changepage(poetImage)
+    }
+    if (poetTitle) {
+        changepage(poetTitle)
+    }
+}
+const changepage = (element) => {
+    const poetId = element.dataset.poet
+    location.replace(`/poet.html?poetId=${poetId}`)
 }
 
 window.addEventListener('load', pageloading)
@@ -214,3 +232,4 @@ loadMorePoetsBtn.addEventListener('click', countHandler)
 sortContainer.addEventListener('click', sortPoetsHandler)
 sortBtn.addEventListener('click', sortContainerOpener)
 reloadBtn.addEventListener('click', reloadPage)
+poetsContainer.addEventListener('click', moveToPoetPage)

@@ -18,9 +18,6 @@ const randomPoemGenerator = document.querySelector('.random-porm-btn')
 const randomPoemContainer = document.querySelector('.loader-container')
 const randomPoemTextContainer = document.querySelector('.random-poem-text-container')
 
-const popularPoetsContainer = document.querySelector('.popular-poets-container')
-const popularPoetsLoader = document.querySelector('.popular-poets-loader')
-
 
 const url = 'https://api.ganjoor.net';
 
@@ -30,10 +27,10 @@ new Swiper('.hero-slider', {
     direction: 'horizontal',
     loop: true,
 
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: true,
-    },
+    // autoplay: {
+    //     delay: 5000,
+    //     disableOnInteraction: true,
+    // },
 
     pagination: {
         el: '.swiper-pagination',
@@ -41,7 +38,6 @@ new Swiper('.hero-slider', {
         clickable: true,
     },
 })
-
 new Swiper('.poets-slider', {
     modules: [Navigation],
     grabCursor: true,
@@ -112,43 +108,6 @@ const hideLoader = (container, textContainer) => {
     container.classList.add('hidden')
 }
 
-// //popular poets handlers
-// const fetchPopularPoets = () => {
-//     showLoader(popularPoetsLoader)
-//     fetch(`https://api.ganjoor.net/api/ganjoor/poets`)
-//         .then(res => res.json())
-//         .then(data => {
-//             const slicesdata = data.slice(20, 35)
-//             createPopularPoetsElemets(slicesdata);
-//         })
-//         .catch()
-//         .finally(() => {
-//             hideLoader(popularPoetsLoader);
-//         })
-// }
-// const createPopularPoetsElemets = (data) => {
-//     popularPoetsContainer.innerHTML = '';
-//     data.forEach(item => {
-//         popularPoetsContainer.insertAdjacentHTML('beforeend',
-//             `
-//             <div class="swiper-slide relative gap-4 w-45! rounded-xl dark:bg-dark-card bg-light-card shadow-xl border-2 dark:border-dark-border border-light-border">
-//                 <div class="h-full flex flex-col items-center gap-2">
-//                         <img class="size-26 rounded-full popular-poet-img cursor-pointer" src="${url}${item.imageUrl}" alt="" data-poet="${item.fullUrl}">
-//                         <p class="dark:text-dark-text text-light-text font-vazir text-card-header font-bold popular-poet-title cursor-pointer" data-poet="${item.fullUrl}">${item.name}</p>
-//                 </div>
-//             </div>
-//             `
-//         )
-//     })
-// }
-
-// const navigateToPoetPage = (event) => {
-//     const target = event.target.closest('[data-poet]')
-//     if (target) {
-//         location.assign(`/poet.html?name=${target.dataset.poet.slice(1)}`)
-//     }
-// }
-
 //! theme Handler
 const themeHandler = (isDarkMode) => {
     const status = JSON.parse(localStorage.getItem('isDarkMode'));
@@ -190,4 +149,3 @@ document.addEventListener('DOMContentLoaded', onPageLoad)
 randomPoemGenerator.addEventListener('click', randomPoemHandler)
 darkBtn.addEventListener('click', darkTheme)
 lightBtn.addEventListener('click', lightTheme);
-popularPoetsContainer.addEventListener('click', navigateToPoetPage)

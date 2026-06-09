@@ -9,6 +9,8 @@
 </head>
 
 <body class="dark:bg-dark-bg bg-light-bg">
+  
+  <!-- Loader Element -->
   <div
     class="fixed flex justify-center items-center w-full h-full dark:bg-dark-bg bg-light-bg z-50 top-0 right-0 page-loader">
     <div class="bg-black/30 w-50 py-10 flex gap-5 flex-col justify-center items-center rounded-xl">
@@ -17,7 +19,7 @@
     </div>
   </div>
 
-
+  <!-- Header Start -->
   <div class="container max-sm:px-3 pt-5 mx-auto">
     <header class="max-sm:flex-row-reverse flex justify-between items-center">
       <div class="flex">
@@ -50,28 +52,38 @@
       </div>
     </header>
   </div>
+  <!-- Header End -->
+
   <!-- Divider -->
   <div
     class="mt-2 relative after:content-[''] after:absolute after:w-full after:h-px dark:after:bg-dark-border after:bg-light-border">
   </div>
 
+  <!-- Main Content Start -->
   <div class="container max-sm:px-3 mx-auto">
     <main class="mt-10">
       <div class="swiper hero-slider">
         <div class="swiper-wrapper relative">
-          <div class="swiper-slide relative w-full h-110 max-sm:h-40 mx-auto overflow-hidden rounded-xl shadow-xs">
-            <img class="w-full bg-cover h-110 max-sm:h-40" src="./src/assets/images/banner1.png" alt="">
+          <div
+            class="swiper-slide relative w-full h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-40 mx-auto overflow-hidden rounded-xl shadow-xs">
+            <img class="w-full bg-cover h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-40"
+              src="./src/assets/images/banner1.png" alt="">
             <div class="absolute top-0 bg-linear-to-r from-transparent via-black/70 to-black w-full h-full">
             </div>
-            <div class="max-sm:hidden absolute z-50 top-25 right-20">
-              <h1 class="dark:text-dark-text text-dark-text font-vazir font-medium text-hero">کشف زیبایی شعر فارسی</h1>
-              <p class="dark:text-dark-text-secondary text-dark-text-secondary font-vazir font-normal text-section">با
+            <div
+              class="max-xl:top-21 max-xl:right-15 max-lg:top-17 max-lg:right-10 max-md:top-11 max-sm:hidden absolute z-50 top-25 right-20">
+              <h1
+                class="dark:text-dark-text text-dark-text font-vazir font-medium max-xl:text-4xl max-lg:text-3xl max-md:text-2xl text-hero">
+                کشف زیبایی شعر فارسی</h1>
+              <p
+                class="dark:text-dark-text-secondary text-dark-text-secondary font-vazir font-normal max-md:text-[10px] max-lg:text-[14px] max-xl:text-[16px] max-xl:mt-2 text-section">
+                با
                 آوین،
                 به دنیای شعر شاعران بزرگ سفر کنید</p>
               <div
-                class="flex justify-between items-center mt-7 px-5 dark:bg-dark-input-bg bg-light-input-bg rounded-full h-14 shadow-2xl ">
+                class="flex justify-between items-center w-120 max-xl:w-90 max-lg:w-75 mt-7 max-xl:mt-4 px-5 dark:bg-dark-input-bg bg-light-input-bg rounded-full h-14 shadow-2xl ">
                 <input
-                  class="focus:outline-hidden rounded-xl pr-2 h-full font-vazir placeholder:font-normal placeholder:font-vazir dark:text-dark-text text-light-text w-[90%]"
+                  class="focus:outline-hidden rounded-xl pr-2 h-full font-vazir placeholder:font-normal placeholder:font-vazir dark:text-dark-text text-light-text max-xl:placeholder:text-[13px] max-xl:text-[13px] w-[90%]"
                   type="text" placeholder="جستجوی شاعر، شعر، بیت">
                 <button class="cursor-pointer"><i
                     class="text-xl fa-solid fa-search dark:text-dark-text text-light-text"></i></button>
@@ -80,15 +92,15 @@
                 <p class="dark:text-dark-text text-dark-text text-xs font-vazir font-normal">پیشنهادها:</p>
                 <div class="flex gap-4">
                   <a href=""
-                    class="dark:text-dark-text font-vazir text-xs font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">حافظ</a>
+                    class="dark:text-dark-text font-vazir text-xs max-lg:text-[10px] font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 max-xl:w-11 max-xl:h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">حافظ</a>
                   <a href=""
-                    class="dark:text-dark-text font-vazir text-xs font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">سعدی</a>
+                    class="dark:text-dark-text font-vazir text-xs max-lg:text-[10px] font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 max-xl:w-11 max-xl:h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">سعدی</a>
                   <a href=""
-                    class="dark:text-dark-text font-vazir text-xs font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">مولانا</a>
+                    class="dark:text-dark-text font-vazir text-xs max-lg:text-[10px] font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 max-xl:w-11 max-xl:h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">مولانا</a>
                   <a href=""
-                    class="dark:text-dark-text font-vazir text-xs font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">خیام</a>
+                    class="dark:text-dark-text font-vazir text-xs max-lg:text-[10px] font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 max-xl:w-11 max-xl:h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">خیام</a>
                   <a href=""
-                    class="dark:text-dark-text font-vazir text-xs font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">فردوسی</a>
+                    class="dark:text-dark-text font-vazir text-xs max-lg:text-[10px] font-medium dark:bg-dark-input-bg bg-light-input-bg rounded-full w-14 h-8 max-xl:w-11 max-xl:h-8 leading-8 text-center transition-normal duration-300 hover:scale-105 active:scale-90">فردوسی</a>
                 </div>
               </div>
             </div>
@@ -99,16 +111,20 @@
             </div>
           </div>
 
-          <div class="swiper-slide relative w-full h-110 max-sm:h-40  overflow-hidden rounded-xl">
-            <img class="w-full bg-cover h-110 max-sm:h-40" src="./src/assets/images/banner2.png" alt="">
+          <div
+            class="swiper-slide relative w-full  h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-40 overflow-hidden rounded-xl">
+            <img class="w-full bg-cover h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-40"
+              src="./src/assets/images/banner2.png" alt="">
             <div class="absolute top-0 bg-linear-to-r from-transparent via-black/70 to-black w-full h-full">
-              <div class="max-sm:hidden absolute z-50 top-33 right-20">
-                <h1 class="flex items-center dark:text-dark-text text-dark-text font-vazir font-medium text-hero">
+              <div
+                class="max-xl:top-29 max-xl:right-15 max-lg:top-25 max-lg:right-10 max-md:top-20 max-sm:hidden absolute z-50 top-33 right-20">
+                <h1
+                  class="flex items-center dark:text-dark-text text-dark-text font-vazir font-medium max-xl:text-4xl max-lg:text-3xl max-md:text-2xl text-hero">
                   دیوان حافظ
                   <i class="fa-solid fa-feather-pointed"></i>
                 </h1>
                 <p
-                  class="dark:text-dark-text-secondary text-dark-text-secondary font-vazir font-normal text-section mt-2">
+                  class="dark:text-dark-text-secondary text-dark-text-secondary font-vazir font-normal max-md:text-[12px] max-lg:text-[16px] max-xl:text-[18px] max-xl:mt-2 text-section mt-2">
                   پاسخ نیت خود را از زبان حافظ بشنوید
                 </p>
                 <a href="fall.html"
@@ -128,7 +144,7 @@
       </div>
       <div class="flex justify-between items-center flex-wrap mt-6">
         <div
-          class="max-sm:w-full max-sm:px-4 relative flex items-center flex-col dark:bg-dark-card bg-light-card py-4 max-sm:h-70 h-80 w-[20%] rounded-xl border-2 dark:border-dark-border border-light-border shadow-xs">
+          class="max-md:w-full max-sm:px-4 relative flex items-center flex-col dark:bg-dark-card bg-light-card py-4 max-sm:h-70 max-xl:w-[25%] max-lg:w-[40%] w-[20%] h-80 rounded-xl border-2 dark:border-dark-border border-light-border shadow-xs">
           <p class="dark:text-dark-text text-light-text font-vazir font-bold text-card-header">بیت تصادفی امروز</p>
           <p class="max-sm:text-3xl smdark:text-dark-primary text-light-primary font-vazir font-black text-5xl">،،</p>
           <div class="flex flex-col items-center gap-3 leading-6 text-center">
@@ -136,7 +152,8 @@
 
             </div>
             <div class="flex flex-col gap-2 random-poem-text-container">
-              <div class="max-sm:text-[3px] dark:text-dark-text text-light-text font-vazir max-sm:mt-0 mt-5 text-card-description random-poem-text">
+              <div
+                class="max-sm:text-[3px] dark:text-dark-text text-light-text font-vazir max-sm:mt-0 mt-5 text-card-description random-poem-text">
 
 
               </div>
@@ -151,7 +168,7 @@
             بیت دیگر
           </button>
         </div>
-        <div class="relative w-[78%] h-52 max-sm:w-full">
+        <div class="relative w-[80%] max-xl:w-[75%] max-lg:w-[60%] h-52 max-sm:w-full">
           <div class="absolute flex justify-center items-center w-full h-54 popular-poets-loader">
 
           </div>
@@ -166,7 +183,8 @@
       </div>
     </main>
   </div>
-  </div>
+  <!-- Main Content End -->
+
   <script type="module" src="./src/js/main.js"></script>
 </body>
 
