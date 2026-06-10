@@ -73,10 +73,10 @@ const createFallHandler = (data) => {
         divider.className += 'absolute font-bold text-xl dark:text-dark-primary text-light-primary font-vazir';
 
         const rightPoet = container.querySelector('.right-poet')
-        rightPoet.className += 'block w-80 absolute -right-90 font-vazir max-xl:-right-76 max-xl:w-70 max-xl:text-[13px] max-lg:text-[15px] max-md:text-[12px] max-md:w-56 max-md:-right-70 max-sm:text-[10px] max-sm:-right-45 max-sm:w-43'
+        rightPoet.className += 'block w-80 absolute text-left -right-90 font-vazir max-xl:-right-76 max-xl:w-70 max-xl:text-[13px] max-lg:text-[15px] max-md:text-[12px] max-md:w-56 max-md:-right-70 max-sm:text-[9px] max-sm:-right-45 max-sm:w-43'
 
         const leftPoet = container.querySelector('.left-poet')
-        leftPoet.className += 'block w-80 absolute -left-110 font-vazir max-xl:-left-86 max-xl:w-70 max-xl:text-[13px] max-lg:text-[15px] max-md:text-[12px] max-md:w-56 max-md:-left-75 max-sm:text-[10px] max-sm:-left-46 max-sm:w-43';
+        leftPoet.className += 'block w-80 absolute -left-110 font-vazir max-xl:-left-86 max-xl:w-70 max-xl:text-[13px] max-lg:text-[15px] max-md:text-[12px] max-md:w-56 max-md:-left-75 max-sm:text-[9px] max-sm:-left-46 max-sm:w-43';
 
         poet.append(container)
     })
