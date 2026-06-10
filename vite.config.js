@@ -9,6 +9,7 @@ export default defineConfig({
         poets: resolve(__dirname, 'poets.html'),
         fall: resolve(__dirname, 'fall.html'),
         poet: resolve(__dirname, 'poet.html'),
+        auth: resolve(__dirname, 'authpage.html'),
       }
     }
   }
