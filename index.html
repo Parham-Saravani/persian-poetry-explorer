@@ -9,7 +9,7 @@
 </head>
 
 <body class="dark:bg-dark-bg bg-light-bg">
-  
+
   <!-- Loader Element -->
   <div
     class="fixed flex justify-center items-center w-full h-full dark:bg-dark-bg bg-light-bg z-50 top-0 right-0 page-loader">
@@ -22,16 +22,20 @@
   <!-- Header Start -->
   <div class="container max-sm:px-3 pt-5 mx-auto">
     <header class="max-sm:flex-row-reverse flex justify-between items-center">
-      <div class="flex">
-        <button
-          class="hidden justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs dark-btn">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <button
-          class="flex justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs light-btn">
-          <i class="fa-solid fa-sun"></i>
-        </button>
+      <div class="flex gap-4 items-center">
+        <div class="flex">
+          <button
+            class="hidden justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs dark-btn">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button
+            class="flex justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs light-btn">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+        </div>
+        <a href="./authpage.html" class="font-vazir py-2 px-4 dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary rounded-xl transition-normal duration-300 hover:-translate-y-0.5 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover">ورود | ثبت نام</a>
       </div>
+
       <div>
         <ul class="max-sm:pr-5 flex gap-6">
           <li class="h-9 border-b-2 border-dark-primary"><a href="index.html"
@@ -65,8 +69,8 @@
       <div class="swiper hero-slider">
         <div class="swiper-wrapper relative">
           <div
-            class="swiper-slide relative w-full h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-40 mx-auto overflow-hidden rounded-xl shadow-xs">
-            <img class="w-full bg-cover h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-40"
+            class="swiper-slide relative w-full h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-50 mx-auto overflow-hidden rounded-xl shadow-xs">
+            <img class="w-full bg-cover h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-50"
               src="./src/assets/images/banner1.png" alt="">
             <div class="absolute top-0 bg-linear-to-r from-transparent via-black/70 to-black w-full h-full">
             </div>
@@ -104,7 +108,7 @@
                 </div>
               </div>
             </div>
-            <div class="hidden max-sm:block z-50 top-12 right-5 absolute font-vazir">
+            <div class="hidden max-sm:block z-50 top-17 right-5 absolute font-vazir">
               <h1 class="dark:text-dark-text text-dark-text font-bold">جستجو در میان هزاران شعر و شاعر فارسی</h1>
               <a href="poets.html"
                 class="mt-4 dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary transition-normal duration-300 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover cursor-pointer rounded-xl block w-30 h-10 leading-10 text-center">جستجو</a>
@@ -112,8 +116,8 @@
           </div>
 
           <div
-            class="swiper-slide relative w-full  h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-40 overflow-hidden rounded-xl">
-            <img class="w-full bg-cover h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-40"
+            class="swiper-slide relative w-full  h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-50 overflow-hidden rounded-xl">
+            <img class="w-full bg-cover h-110 max-xl:h-90 max-lg:h-80 max-md:h-70 max-sm:h-50"
               src="./src/assets/images/banner2.png" alt="">
             <div class="absolute top-0 bg-linear-to-r from-transparent via-black/70 to-black w-full h-full">
               <div
@@ -132,7 +136,7 @@
                   فال</a>
               </div>
             </div>
-            <div class="hidden max-sm:block z-50 top-12 right-5 absolute font-vazir">
+            <div class="hidden max-sm:block z-50 top-16 right-5 absolute font-vazir">
               <h1 class="dark:text-dark-text text-dark-text font-bold">نیت کن و از حافظ مدد بگیر</h1>
               <a class="mt-4 dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary transition-normal duration-300 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover cursor-pointer rounded-xl block w-30 h-10 leading-10 text-center"
                 href="fall.html">دریافت فال</a>
@@ -148,7 +152,7 @@
           <p class="dark:text-dark-text text-light-text font-vazir font-bold text-card-header">بیت تصادفی امروز</p>
           <p class="max-sm:text-3xl smdark:text-dark-primary text-light-primary font-vazir font-black text-5xl">،،</p>
           <div class="flex flex-col items-center gap-3 leading-6 text-center">
-            <div class="flex justify-center items-center w-full h-40 loader-container">
+            <div class="flex justify-center max-sm:h-30 items-center w-full h-40 loader-container">
 
             </div>
             <div class="flex flex-col gap-2 random-poem-text-container">
@@ -163,22 +167,13 @@
             </div>
           </div>
           <button
-            class="absolute bottom-3 flex items-center gap-1 dark:bg-dark-primary bg-light-primary rounded-xl text-card-description px-6 py-3 max-sm:px-16 max-sm:py-3  max-sm:text-center dark:text-dark-text text-dark-text font-vazir transition-normal duration-300 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover hover:-translate-y-0.5 cursor-pointer random-porm-btn">
+            class="absolute max-sm:w-110 w-70 bottom-3 flex items-center justify-center gap-1 dark:bg-dark-primary bg-light-primary rounded-xl text-card-description px-6 py-3 max-sm:px-16 max-sm:py-3  max-sm:text-center dark:text-dark-text text-dark-text font-vazir transition-normal duration-300 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover hover:-translate-y-0.5 cursor-pointer random-porm-btn">
             <i class="fa-solid fa-dice"></i>
             بیت دیگر
           </button>
         </div>
         <div class="relative w-[80%] max-xl:w-[75%] max-lg:w-[60%] h-52 max-sm:w-full">
-          <div class="absolute flex justify-center items-center w-full h-54 popular-poets-loader">
-
-          </div>
-          <!-- <div class="swiper poets-slider h-full flex ml-0!">
-            <div class="swiper-wrapper h-full popular-poets-container">
-
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div> -->
+          
         </div>
       </div>
     </main>

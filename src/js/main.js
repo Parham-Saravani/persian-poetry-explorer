@@ -71,7 +71,7 @@ const randomPoemHandler = () => {
         .catch(() => {
             randomPoemPoet.innerHTML = '';
             randomPoemText.innerHTML = '';
-            randomPoemText.innerHTML = '<p class="font-vazir font-bold bg-red-600/20 py-6 px-16 text-red-600 rounded-2xl">مشکلی پیش آمده<br> لطفا مجدد تلاش نمایید </p>'
+            randomPoemText.innerHTML = '<p class="font-vazir text-[14px] font-bold bg-red-600/20 py-6 px-16 text-red-600 rounded-2xl">مشکلی پیش آمده<br> لطفا مجدد تلاش نمایید </p>'
         })
         .finally(() => {
             hideLoader(randomPoemContainer, randomPoemTextContainer);
@@ -109,7 +109,7 @@ const hideLoader = (container, textContainer) => {
 }
 
 //! theme Handler
-const themeHandler = (isDarkMode) => {
+const themeHandler = () => {
     const status = JSON.parse(localStorage.getItem('isDarkMode'));
     if (!status) {
         lightTheme();
