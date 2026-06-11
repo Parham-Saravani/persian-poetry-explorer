@@ -89,28 +89,10 @@ const takePoetId = () => {
     return poetId
 }
 
-const centuries = {
-    "2": 'قرن سوم',
-    "3": 'قرن چهارم',
-    "4": 'قرن پنجم',
-    "5": 'قرن ششم',
-    "6": 'قرن هفتم',
-    "7": 'قرن هشتم',
-    "8": 'قرن نهم',
-    "9": 'قرن دهم',
-    "10": 'قرن یازدهم',
-    "11": 'قرن دوازدهم',
-    "12": 'قرن سیزدهم',
-    "13": 'قرن چهاردهم',
-}
-const centuryFormatter = (num) => {
-    console.log(num.split(' '));
-
-    return centuries.num;
-}
-
 //! create poet elements
 const createPoetElements = (data) => {
+    console.log(data);
+    
     poetImage.setAttribute('src', `${url}${data.poet.imageUrl}`);
     poetName.textContent = data.poet.name;
 

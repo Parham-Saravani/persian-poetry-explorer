@@ -5,10 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ورود به حساب کاربری</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="dark:bg-dark-bg bg-light-bg h-screen max-xl:px-5 max-lg:px-30 max-md:px-20 max-sm:px-5 flex justify-center items-center">
+<body
+    class="dark:bg-dark-bg bg-light-bg h-screen max-xl:px-5 max-lg:px-30 max-md:px-20 max-sm:px-5 flex justify-center items-center">
+    <div
+        class="fixed toast z-50 top-3  dark:bg-dark-surface bg-light-surface px-5 py-5 w-63 rounded-xl  transition-normal duration-300">
+        <div class="flex gap-2 items-center toast-status">
+            <span
+                class="text-white bg-red-50 text-[16px] rounded-full flex justify-center items-center h-8 w-8 toast-icon-container">
+                <i class="toast-icon"></i> </span>
+            <h2 class="font-vazir text-[17px] toast-title"></h2>
+        </div>
+        <p class="mt-2 dark:text-dark-text text-[14px] text-light-text font-vazir toast-message">ثبت نام با موفقیت انجام شد</p>
+    </div>
+
     <!-- Loader Element -->
     <div
         class="fixed flex justify-center items-center w-full h-full dark:bg-dark-bg bg-light-bg z-50 top-0 right-0 page-loader">
@@ -18,13 +30,14 @@
         </div>
     </div>
 
-    <div class="max-lg:w-full max-lg:static max-lg:bg-transparent! max-sm:pr-0 flex pr-10  relative w-300 h-200 py-10 dark:bg-dark-input-bg bg-light-card rounded-xl shadow-xl">
+    <div
+        class="max-lg:w-full max-lg:static max-lg:bg-transparent! max-sm:pr-0 flex pr-10  relative w-300 h-200 py-10 dark:bg-dark-input-bg bg-light-card rounded-xl shadow-xl">
         <div
             class="max-lg:hidden absolute top-0 left-0 right-0 bottom-0 bg-linear-to-r h-full dark:from-black/25 dark:via-black/30 dark:to-black/30 from-black/25 via-white/30 to-white/30 z-10">
         </div>
 
         <div
-            class="h-160 max-lg:static max-xl:right-10 max-lg:w-full  z-20 right-17 top-16 max-sm:px-5 w-120 px-10 py-5 dark:bg-dark-surface bg-light-surface border-2 dark:border-dark-border border-light-border rounded-xl">
+            class="h-165 max-lg:static max-xl:right-10 max-lg:w-full  z-20 right-17 top-16 max-sm:px-5 w-120 px-10 py-5 dark:bg-dark-surface bg-light-surface border-2 dark:border-dark-border border-light-border rounded-xl">
             <div class="flex justify-center auth-status-container">
                 <button
                     class="font-vazir dark:text-dark-text text-light-text border-hidden pb-3 w-50 cursor-pointer transition-normal duration-300 auth-current-content auth-active"
@@ -36,7 +49,7 @@
             </div>
 
             <!-- Login Content -->
-            <div class="transition-normal duration-300 border-hidden  login-content">
+            <div class="transition-normal duration-300 border-hidden   login-content">
                 <div class="mt-7 w-full flex flex-col gap-3 justify-center items-center">
                     <h1 class="font-vazir text-3xl font-bold dark:text-dark-primary text-light-primary">به آوین خوش
                         آمدید</h1>
@@ -44,29 +57,34 @@
                         ادامه، وارد حساب کاربری خود شوید</p>
                 </div>
                 <form class="mt-8">
-                    <div class="flex flex-col gap-5">
+                    <div class="flex flex-col">
                         <div
                             class="w-full dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl focus-within:border-input-focus transition-normal duration-300">
                             <input
-                                class="w-full text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary pr-5 py-4 rounded-xl outline-hidden"
+                                class="w-full text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary pr-5 py-4 rounded-xl outline-hidden login-email"
                                 type="email" placeholder="ایمیل خود را وارد کنید" required>
                         </div>
+                        <p class="hidden mt-1 font-vazir text-red-600 font-normal text-xs login-email-alert">ایمیل صحیح
+                            نمیباشد</p>
                         <div
-                            class="w-full relative dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl focus-within:border-input-focus transition-normal duration-300">
+                            class="mt-3 w-full relative dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl focus-within:border-input-focus transition-normal duration-300">
                             <input
-                                class="w-full pl-13 text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary px-5 py-4 outline-hidden"
+                                class="w-full pl-13 text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary px-5 py-4 outline-hidden login-password"
                                 type="password" placeholder="رمز عبور خود را وارد کنید">
                             <span
                                 class="cursor-pointer absolute left-4 top-3.5 dark:text-dark-text-secondary text-light-text-secondary show-password">
                                 <i class="fa-solid fa-eye"></i>
                             </span>
                         </div>
+                        <p class="hidden mt-1 font-vazir text-red-600 font-normal text-xs login-password-alert">رمز
+                            عبور باید حداقل 8
+                            کارکتر باشد</p>
                     </div>
                     <span
                         class="mt-3 font-vazir text-[14px] dark:text-dark-primary text-light-primary cursor-pointer transition-normal duration-300 dark:hover:text-dark-primary-hover hover:text-light-primary-hover forget-password-btn">رمز
                         عبور خود را فراموش کردید؟</span>
                     <button
-                        class="mt-5 w-full h-15 text-[16px] font-vazir dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover transition-normal duration-300 rounded-xl cursor-pointer">ورود</button>
+                        class="mt-5 w-full h-15 text-[16px] font-vazir dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover transition-normal duration-300 rounded-xl cursor-pointer login-btn disabled:bg-violet-400 disabled:cursor-default">ورود</button>
                 </form>
                 <p class="mt-8 text-center font-vazir dark:text-dark-text text-light-text text-[14px]">حساب کاربری
                     ندارید؟ <span
@@ -76,51 +94,64 @@
             </div>
 
             <!-- SignUp Content -->
-            <div class="transition-normal opacity-0 hidden duration-300 signup-content">
+            <div class="transition-normal border-hidden opacity-0 hidden duration-300 signup-content">
                 <div class="mt-7 w-full flex flex-col gap-3 justify-center items-center">
                     <h1 class="font-vazir text-3xl font-bold dark:text-dark-primary text-light-primary">ایجاد حساب
                         کاربری</h1>
                     <p
-                        class="font-vazir text-center text-[15px] dark:text-dark-text-secondary text-light-text-secondary">حساب کاربری خود را بسازید و به دنیای شعر فارسی بپیوندید.</p>
+                        class="font-vazir text-center text-[15px] dark:text-dark-text-secondary text-light-text-secondary">
+                        حساب کاربری خود را بسازید و به دنیای شعر فارسی بپیوندید.</p>
                 </div>
-                <form class="mt-8">
-                    <div class="flex flex-col gap-5">
+                <form class="mt-8 border-hidden">
+                    <div class="flex flex-col">
                         <div
-                            class="w-full dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl">
+                            class="w-full dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl focus-within:border-input-focus transition-normal duration-300">
                             <input
-                                class="w-full text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary pr-5 py-4 outline-hidden"
-                                type="email" placeholder="نام کاربری خود را وارد کنید" required>
+                                class="w-full text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary pr-5 py-4 outline-hidden signup-username-input"
+                                type="text" placeholder="نام کاربری خود را وارد کنید">
                         </div>
+                        <p class="hidden mt-1 font-vazir text-red-600 font-normal text-xs signup-username-alert">نام
+                            کاربری باید حداقل 6
+                            کارکتر باشد</p>
                         <div
-                            class="w-full dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl ">
+                            class="mt-3 w-full dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl focus-within:border-input-focus transition-normal duration-300">
                             <input
-                                class="w-full text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary pr-5 py-4 outline-hidden"
-                                type="email" placeholder="ایمیل خود را وارد کنید" required>
+                                class="w-full text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary pr-5 py-4 rounded-xl outline-hidden signup-email-input"
+                                type="email" placeholder="ایمیل خود را وارد کنید">
                         </div>
+                        <p class="hidden mt-1 font-vazir text-red-600 font-normal text-xs signup-email-alert">ایمیل صحیح
+                            نمیباشد</p>
                         <div
-                            class="w-full relative dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl ">
+                            class="mt-3 w-full relative dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl focus-within:border-input-focus transition-normal duration-300">
                             <input
-                                class="w-full pl-13 text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary px-5 py-4 outline-hidden"
+                                class="w-full pl-13 text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary px-5 py-4 outline-hidden signup-password-input"
                                 type="password" placeholder="رمز عبور خود را وارد کنید">
                             <span
                                 class="cursor-pointer absolute left-4 top-3.5 dark:text-dark-text-secondary text-light-text-secondary show-password">
                                 <i class="fa-solid fa-eye"></i>
                             </span>
                         </div>
+                        <p class="hidden mt-1 font-vazir text-red-600 font-normal text-xs signup-password-alert">رمز
+                            عبور باید حداقل 8
+                            کارکتر باشد</p>
                         <div
-                            class="w-full relative dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl ">
+                            class="mt-3 w-full relative dark:bg-dark-input-bg bg-light-input-bg border dark:border-dark-border border-light-border rounded-xl focus-within:border-input-focus transition-normal duration-300">
                             <input
-                                class="w-full pl-13 text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary px-5 py-4 outline-hidden"
+                                class="w-full pl-13 text-[14px] dark:text-dark-text text-light-text font-vazir placeholder:text-[13px] placeholder:font-normal dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary px-5 py-4 outline-hidden signup-confirm-password-input"
                                 type="password" placeholder="رمز عبور خود را دوباره وارد کنید">
                             <span
                                 class="cursor-pointer absolute left-4 top-3.5 dark:text-dark-text-secondary text-light-text-secondary show-password">
                                 <i class="fa-solid fa-eye"></i>
                             </span>
                         </div>
+                        <p
+                            class="hidden mt-1 font-vazir text-red-600 font-normal text-xs signup-confirm-password-alert">
+                            رمز عبور تطابق ندارد</p>
                     </div>
                     <button
-                        class="mt-5 w-full h-15 text-[16px] font-vazir dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover transition-normal duration-300 rounded-xl cursor-pointer">ثبت
-                        نام</button>
+                        class="mt-5 w-full h-15 text-[16px] font-vazir dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover transition-normal duration-300 rounded-xl cursor-pointer signup-btn disabled:bg-violet-400 disabled:cursor-default">ثبت
+                        نام
+                    </button>
                 </form>
                 <p class="mt-8 text-center font-vazir dark:text-dark-text text-light-text text-[14px]">حساب کاربری
                     دارید؟<span

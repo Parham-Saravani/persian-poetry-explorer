@@ -26,6 +26,35 @@
 }
 
 
+.toast {
+    left: -300px;
+}
+
+.toast.toast-show {
+    left: 10px !important;
+}
+
+
+.success {
+    .toast-icon-container {
+        background-color: var(--color-toast-success);
+    }
+
+    .toast-title {
+        color: var(--color-toast-success);
+    }
+}
+
+.failed {
+    .toast-icon-container {
+        background-color: var(--color-toast-faild);
+    }
+
+    .toast-title {
+        color: var(--color-toast-faild);
+    }
+}
+
 .sort-by-century-items.active {
     background-color: #7C3AED;
     color: #fff;
@@ -85,18 +114,22 @@
         -moz-transform: translateY(15px);
         -ms-transform: translateY(15px);
         -o-transform: translateY(15px);
-}
-    100%{
+    }
+
+    100% {
         opacity: 1;
         transform: translateY(0);
         -webkit-transform: translateY(0);
         -moz-transform: translateY(0);
         -ms-transform: translateY(0);
         -o-transform: translateY(0);
-}
+    }
 }
 
 @theme {
+    --color-toast-success: oklch(62.7% 0.194 149.214);
+    --color-toast-faild: oklch(57.7% 0.245 27.325);
+
     --color-input-focus: #8B5CF6;
 
     --color-dark-input-bg: #131E35;
@@ -116,9 +149,7 @@
     --color-dark-text: #F8FAFC;
     --color-dark-text-secondary: #94A3B8;
     --color-dark-border: #23304D;
-    --color-dark-success: #22C55E;
-    --color-dark-warning: #F59E0B;
-    --color-dark-danger: #EF4444;
+
 
     --color-light-input-bg: #FFFFFF;
     --color-light-input-border: #E2E8F0;
@@ -135,9 +166,6 @@
     --color-light-text: #0F172A;
     --color-light-text-secondary: #475569;
     --color-light-border: #E2E8F0;
-    --color-light-success: #16A34A;
-    --color-light-warning: #D97706;
-    --color-light-danger: #DC2626;
 
 
     --font-vazir: 'VazirMatn';
@@ -151,7 +179,7 @@
     --text-section: 1.3rem;
 
     --animate-loader: loader 1s infinite linear alternate;
-    --animate-authpage : showAuthPages 1s ease;
+    --animate-authpage: showAuthPages 1s ease;
 }
 
 @plugin "tailwind-scrollbar";
