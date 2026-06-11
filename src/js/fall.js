@@ -32,14 +32,10 @@ const fetchFall = () => {
     fetch('https://api.ganjoor.net/api/ganjoor/hafez/faal')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
-
             createFallHandler(data);
             isDone = true;
         })
         .catch((error) => {
-            console.log(error);
-
             isDone = false
             errorHandler();
         })
