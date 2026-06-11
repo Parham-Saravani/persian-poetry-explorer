@@ -17,6 +17,10 @@ const sortBtn = document.querySelector('.sorte-btn')
 const sortItems = document.querySelectorAll('.sort-by-century-items')
 const sortContainer = document.querySelector('.sort-container')
 
+//header auth btns
+const profileBtn = document.querySelector('.go-to-profile-btn')
+const authBtn = document.querySelector('.auth-btn')
+
 const url = 'https://api.ganjoor.net';
 let count = 1;
 let totalpoets = [];
@@ -27,6 +31,7 @@ let isDone = false;
 const onPageLoad = () => {
     themeHandler();
     fetchPoetsData()
+    validateUserLoggedIn();
 }
 
 //take poets lists
@@ -169,7 +174,7 @@ const sortCloseHandler = (event) => {
 }
 
 //! theme Handler
-const themeHandler = (isDarkMode) => {
+const themeHandler = () => {
     const status = JSON.parse(localStorage.getItem('isDarkMode'));
     if (!status) {
         lightTheme();
@@ -221,6 +226,20 @@ const moveToPoetPage = (event) => {
 const changepage = (element) => {
     const poetId = element.dataset.poet
     location.replace(`/poet.html?poetId=${poetId}`)
+}
+
+const validateUserLoggedIn = () => {
+    const userData = JSON.parse(localStorage.getItem('userData'))
+    if (userData) {
+        authBtn.classList.add('hidden')
+        profileBtn.classList.remove('hidden')
+        profileBtn.classList.add('flex')
+    } else {
+        authBtn.classList.remove('hidden')
+        profileBtn.classList.add('hidden')
+        profileBtn.classList.remove('flex')
+
+    }
 }
 
 window.addEventListener('load', pageloading)

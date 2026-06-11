@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" class="dark dark:scrollbar-thumb-dark-card dark:scrollbar-track-dark-bg scrollbar-thumb-light-border scrollbar-track-light-bg">
+<html lang="fa" dir="rtl"
+    class="dark dark:scrollbar-thumb-dark-card dark:scrollbar-track-dark-bg scrollbar-thumb-light-border scrollbar-track-light-bg">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>گنجینه شعر فارسی | شاعران</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
@@ -17,19 +18,30 @@
             <div class="loader w-4 rounded-full animate-loader aspect-square"></div>
         </div>
     </div>
-    
-    <div class="container max-sm:px-2 pt-5 mx-auto">
+
+    <!-- Header Start -->
+    <div class="container max-sm:px-3 pt-5 mx-auto">
         <header class="max-sm:flex-row-reverse flex justify-between items-center">
-            <div class="flex">
-                <button
-                    class="hidden justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs dark-btn">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <button
-                    class="flex justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs light-btn">
-                    <i class="fa-solid fa-sun"></i>
-                </button>
+            <div class="flex gap-4 items-center">
+                <div class="flex">
+                    <button
+                        class="hidden justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs dark-btn">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button
+                        class="flex justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs light-btn">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                </div>
+                <a href="/profile.html"
+                    class="hidden justify-center items-center w-10 h-10 dark:text-dark-text border-2 text-xl rounded-full dark:border-dark-surface border-light-surface cursor-pointer transition-transform duration-300 hover:scale-105 shadow-xs go-to-profile-btn">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="./authpage.html"
+                    class="font-vazir py-2 px-4 dark:text-dark-text text-dark-text dark:bg-dark-primary bg-light-primary rounded-xl transition-normal duration-300 hover:-translate-y-0.5 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover auth-btn">ورود
+                    | ثبت نام</a>
             </div>
+
             <div>
                 <ul class="max-sm:pr-5 flex gap-6">
                     <li><a href="index.html"
@@ -50,6 +62,7 @@
             </div>
         </header>
     </div>
+    <!-- Header End -->
 
     <!-- Divider -->
     <div

@@ -44,6 +44,9 @@ const worksTotalContainer = document.querySelector('.works-total-container')
 const poetWorksContainer = document.querySelector('.works-container')
 const poemsContainer = document.querySelector('.poems-container')
 
+//header auth btns
+const profileBtn = document.querySelector('.go-to-profile-btn')
+const authBtn = document.querySelector('.auth-btn')
 
 const url = 'https://api.ganjoor.net';
 let isAllAboutTextActive = false;
@@ -51,6 +54,7 @@ let isAllAboutTextActive = false;
 const onPageLoad = () => {
     isPoetIdAvailable()
     themeHandler()
+    validateUserLoggedIn();
 }
 
 const isPoetIdAvailable = () => {
@@ -60,10 +64,9 @@ const isPoetIdAvailable = () => {
         fetchPoetData();
         return;
     }
-    navigator.clipboard.writeText()
     poetNotFoundElement.classList.remove('hidden')
     poetNotFoundElement.classList.add('flex')
-
+    skeletonLoader.classList.add('hidden')
 }
 
 const fetchPoetData = () => {
@@ -92,7 +95,7 @@ const takePoetId = () => {
 //! create poet elements
 const createPoetElements = (data) => {
     console.log(data);
-    
+
     poetImage.setAttribute('src', `${url}${data.poet.imageUrl}`);
     poetName.textContent = data.poet.name;
 
@@ -185,7 +188,7 @@ const poemWorksValidator = (data, element) => {
 }
 
 //! Theme handlers
-const themeHandler = (isDarkMode) => {
+const themeHandler = () => {
     const status = JSON.parse(localStorage.getItem('isDarkMode'));
     if (!status) {
         lightTheme();
@@ -236,6 +239,20 @@ const showOtherAboutText = (event) => {
     requestAnimationFrame(() => {
         aboutContainer.classList.add('h-60!')
     })
+}
+
+const validateUserLoggedIn = () => {
+    const userData = JSON.parse(localStorage.getItem('userData'))
+    if (userData) {
+        authBtn.classList.add('hidden')
+        profileBtn.classList.remove('hidden')
+        profileBtn.classList.add('flex')
+    } else {
+        authBtn.classList.remove('hidden')
+        profileBtn.classList.add('hidden')
+        profileBtn.classList.remove('flex')
+
+    }
 }
 
 document.addEventListener('DOMContentLoaded', onPageLoad)

@@ -20,11 +20,15 @@ const fallSummaryContainer = document.querySelector('.fall-summary-container')
 const loaderContainer = document.querySelector('.loader-container')
 const errorElement = document.querySelector('.error-element')
 
-let isDone = false;
+//header auth btns
+const profileBtn = document.querySelector('.go-to-profile-btn')
+const authBtn = document.querySelector('.auth-btn')
 
+let isDone = false;
 
 const onPageLoad = () => {
     themeHandler();
+    validateUserLoggedIn();
 }
 
 const fetchFall = () => {
@@ -57,7 +61,7 @@ const createFallHandler = (data) => {
     poets.forEach(poet => {
         const firstChildText = poet.firstElementChild.firstElementChild.textContent.trim();
         const secondChildText = poet.lastElementChild.firstElementChild.textContent.trim();
-       
+
 
         poet.innerHTML = '';
         const container = document.createElement('div')
@@ -108,7 +112,7 @@ const hideLoader = () => {
 }
 
 //! theme Handler
-const themeHandler = (isDarkMode) => {
+const themeHandler = () => {
     const status = JSON.parse(localStorage.getItem('isDarkMode'));
     if (!status) {
         lightTheme();
@@ -141,6 +145,19 @@ const saveThemeInLocalStorage = (isDarkMode) => {
 const pageloading = () => {
     pageLoader.classList.remove('fixed')
     pageLoader.classList.add('hidden')
+}
+const validateUserLoggedIn = () => {
+    const userData = JSON.parse(localStorage.getItem('userData'))
+    if (userData) {
+        authBtn.classList.add('hidden')
+        profileBtn.classList.remove('hidden')
+        profileBtn.classList.add('flex')
+    } else {
+        authBtn.classList.remove('hidden')
+        profileBtn.classList.add('hidden')
+        profileBtn.classList.remove('flex')
+
+    }
 }
 
 window.addEventListener('load', pageloading)

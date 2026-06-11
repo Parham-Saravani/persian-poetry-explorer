@@ -18,6 +18,9 @@ const randomPoemGenerator = document.querySelector('.random-porm-btn')
 const randomPoemContainer = document.querySelector('.loader-container')
 const randomPoemTextContainer = document.querySelector('.random-poem-text-container')
 
+//header auth btns
+const profileBtn = document.querySelector('.go-to-profile-btn')
+const authBtn = document.querySelector('.auth-btn')
 
 const url = 'https://api.ganjoor.net';
 
@@ -27,10 +30,10 @@ new Swiper('.hero-slider', {
     direction: 'horizontal',
     loop: true,
 
-    // autoplay: {
-    //     delay: 5000,
-    //     disableOnInteraction: true,
-    // },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: true,
+    },
 
     pagination: {
         el: '.swiper-pagination',
@@ -38,26 +41,11 @@ new Swiper('.hero-slider', {
         clickable: true,
     },
 })
-new Swiper('.poets-slider', {
-    modules: [Navigation],
-    grabCursor: true,
-
-    slidesPerView: 'auto',
-
-    spaceBetween: 20,
-    direction: 'horizontal',
-    loop: false,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-})
-
 
 const onPageLoad = () => {
     randomPoemHandler();
     themeHandler();
-    // fetchPopularPoets();
+    validateUserLoggedIn();
 }
 
 // random poem handlers
@@ -142,6 +130,20 @@ const saveThemeInLocalStorage = (isDarkMode) => {
 const pageloading = () => {
     pageLoader.classList.remove('fixed')
     pageLoader.classList.add('hidden')
+}
+
+const validateUserLoggedIn = () => {
+    const userData = JSON.parse(localStorage.getItem('userData'))
+    if (userData) {
+        authBtn.classList.add('hidden')
+        profileBtn.classList.remove('hidden')
+        profileBtn.classList.add('flex')
+    } else {
+        authBtn.classList.remove('hidden')
+        profileBtn.classList.add('hidden')
+        profileBtn.classList.remove('flex')
+
+    }
 }
 
 window.addEventListener('load', pageloading)
