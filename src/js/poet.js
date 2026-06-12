@@ -225,20 +225,15 @@ const showOtherAboutText = (event) => {
         aboutContainer.classList.remove('h-60!')
         aboutContainer.style.height = `${aboutContainer.offsetHeight}px`
         aboutText.classList.remove('line-clamp-3')
-        requestAnimationFrame(() => {
-            aboutContainer.style.height = `${aboutContainer.scrollHeight}px`;
-        })
+        aboutContainer.style.height = `${aboutContainer.scrollHeight}px`;
         return;
     }
-    console.log(aboutContainer.scrollHeight);
     isAllAboutTextActive = false;
     event.target.textContent = 'نمایش بیشتر';
     aboutContainer.style.height = `${aboutContainer.offsetHeight}px`
     aboutText.classList.add('line-clamp-3')
     aboutContainer.classList.add('h-60!')
-    requestAnimationFrame(() => {
-        aboutContainer.classList.add('h-60!')
-    })
+    aboutContainer.classList.add('h-60!')
 }
 
 const validateUserLoggedIn = () => {

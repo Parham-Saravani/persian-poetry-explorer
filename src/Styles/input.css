@@ -18,46 +18,49 @@
 }
 
 .auth-active {
-    border-bottom: solid var(--color-dark-primary) 2px;
+    @apply border-2 border-dark-primary
 }
 
 .auth-status-container>*:not(.auth-active) {
-    border-bottom: solid var(--color-dark-border) 2px;
+    @apply border-2 border-dark-border
 }
 
 
 .toast {
-    left: -300px;
+    @apply -left-300
 }
 
 .toast.toast-show {
-    left: 10px !important;
+    @apply left-3
 }
 
 
 .success {
     .toast-icon-container {
-        background-color: var(--color-toast-success);
+        @apply bg-toast-success
     }
 
     .toast-title {
-        color: var(--color-toast-success);
+        @apply text-toast-success
     }
 }
 
 .failed {
     .toast-icon-container {
-        background-color: var(--color-toast-faild);
+        @apply bg-toast-faild
     }
 
     .toast-title {
-        color: var(--color-toast-faild);
+        @apply text-toast-faild
     }
 }
 
 .sort-by-century-items.active {
-    background-color: #7C3AED;
-    color: #fff;
+    @apply dark:bg-dark-primary bg-light-primary text-dark-text
+}
+
+.active{
+    @apply dark:bg-dark-primary bg-light-primary text-dark-text
 }
 
 @font-face {

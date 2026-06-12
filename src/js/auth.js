@@ -75,13 +75,13 @@ const signupFormValidator = (event) => {
         signupAndLoginMockOperation()
             .then(() => {
                 showToast('success');
-                toastMessage.textContent = 'ثبت نام شما با موفقیت انجام شد';
+                changeToastMessage('ثبت نام شما با موفقیت انجام شد');
                 saveAuthDataInLocalstorage(username , email , password)
                 moveToProfilePage()
             })
             .catch(() => {
                 showToast('failed');
-                toastMessage.textContent = 'ثبت نام شما انجام نشد';
+                changeToastMessage('ثبت نام شما انجام نشد');
             })
             .finally(() => {
                 hideLoadingAnimation(signupBtn)
@@ -109,13 +109,13 @@ const loginFormValidator = (event) => {
         signupAndLoginMockOperation()
             .then(() => {
                 showToast('success');
-                toastMessage.textContent = 'ورود به حساب کاربری با موفقیت انجام شد';
+                changeToastMessage('ورود به حساب کاربری با موفقیت انجام شد');
                 saveAuthDataInLocalstorage(null , email , password)
                 moveToProfilePage()
             })
             .catch(() => {
                 showToast('failed');
-                toastMessage.textContent = 'ورود به حساب کاربری انجام نشد'
+                changeToastMessage('ورود به حساب کاربری انجام نشد');
             })
             .finally(() => {
                 hideLoadingAnimation(loginBtn)
@@ -207,7 +207,10 @@ const showToast = (status) => {
         toast.classList.remove('toast-show')
     }, 2500);
 }
-
+//! change toast messsage 
+const changeToastMessage = (message) => {
+    toastMessage.textContent = message
+}
 // show alerts for not valid inputs data
 const showAlert = (element) => {
     element.classList.remove('hidden')
@@ -329,7 +332,7 @@ const pageloading = () => {
 }
 const moveToProfilePage = () => {
     setTimeout(() => {
-        location.replace('/profile')
+        location.replace('/profile.html')
     }, 3000)
 }
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,236 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
+
 <body class="dark:bg-dark-bg bg-light-bg">
-    <!-- sidebar -->
-    <div class="fixed h-full w-80 rounded-tl-xl rounded-bl-xl bg-red-100">
-        
+    <!-- modal -->
+    <div class="hidden fixed justify-center items-center dark:bg-black/40 backdrop-blur-xl inset-0 z-10 exit-modal">
+        <div class="dark:bg-dark-surface bg-light-surface px-4 py-5 w-100 h-50 rounded-xl">
+            <p class="font-vazir dark:text-dark-text text-light-text text-[19px] text-center">آیا از خروج از حساب کاربری
+                اطمینان دارید؟</p>
+            <div class="flex gap-2 mt-20">
+                <button
+                    class="font-vazir text-[18px] dark:text-dark-text dark:hover:bg-dark-card hover:bg-light-card grow rounded-xl py-4 cursor-pointer transition-normal duration-300 close-exit-modal">انصراف</button>
+                <button
+                    class="flex items-center justify-center gap-2 font-vazir text-[18px] text-white grow bg-red-600 hover:bg-red-600/60 rounded-xl py-4 cursor-pointer transition-normal duration-300 exit-account">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    خروج
+                </button>
+            </div>
+        </div>
     </div>
 
+    <!-- sidebar -->
+    <div
+        class="py-3 px-3 rounded-tl-xl rounded-bl-xl fixed h-full w-[15%] dark:bg-dark-surface bg-light-surface border-l dark:border-dark-border border-light-border">
+        <div class="relative h-full">
+            <div class="text-center">
+                <h1 class="text-dark-primary font-vazir font-bold text-2xl">Avin</h1>
+                <p class="font-vazir dark:text-dark-text text-light-text">دنیای شعر فارسی</p>
+            </div>
+            <div class="mt-20 dark:text-dark-text text-light-text font-vazir font-normal">
+                <ul class="flex flex-col gap-2">
+                    <li
+                        class="w-full flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden go-home-page">
+                        <i class="fa-solid fa-home"></i>
+                        صفحه اصلی
+                    </li>
+                    <li
+                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden active menu-items">
+                        <i class="fa-regular fa-user"></i>
+                        صفحه پروفایل
+                    </li>
+                    <li
+                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden menu-items">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        تاریخچه فال ها
+                    </li>
+                    <li
+                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden menu-items">
+                        <i class="fa-solid fa-gear"></i>
+                        تنظیمات
+                    </li>
+                </ul>
+            </div>
+            <div class="font-vazir dark:text-dark-text text-light-text absolute bottom-0 w-full">
+                <button
+                    class="w-full flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-red-600  hover:text-dark-text border-hidden open-modal">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    خروج از حساب کاربری
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- main content -->
+    <div class="py-8 ml-10 mx-auto w-[80%]">
+        <!-- profile page-->
+        <div
+            class="py-3 px-5 h-full w-full border dark:border-dark-border border-light-border dark:bg-dark-surface bg-light-surface rounded-xl shadow">
+            <div class="flex flex-col gap-1 font-vazir">
+                <h2 class="text-2xl font-bold dark:text-dark-text text-light-text">پروفایل من</h2>
+                <p class="text-[14px] dark:text-dark-text-secondary text-light-text-setext-dark-text-secondary">اطلاعات
+                    حساب کاربری و فعالیت های شما</p>
+            </div>
+
+            <!-- header -->
+            <div
+                class="mt-5 flex items-center gap-10 font-vazir dark:bg-dark-card bg-light-card py-4 px-7 rounded-xl border dark:border-dark-border border-light-border">
+                <div
+                    class="flex text-5xl items-center justify-center text-dark-text size-26 rounded-full dark:bg-dark-primary bg-light-primary">
+                    پ</div>
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-3xl font-bold dark:text-dark-text text-light-text">پرهام سراوانی</h1>
+                        <div class="hidden text-green-600  items-center gap-2 verified-email">
+                            <i class="fa-regular fa-circle-check text-green-600 text-xl"></i>
+                            ایمیل تایید شده
+                        </div>
+                        <div class=" text-red-600 flex items-center gap-2 verified-email">
+                            <i class="fa-regular fa-circle-xmark text-xl"></i>
+                            ایمیل تایید نشده
+                        </div>
+                    </div>
+                    <button
+                        class="text-[14px] py-3 cursor-pointer dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover transition-normal duration-300 text-dark-text dark:bg-dark-primary bg-light-primary rounded-xl">ویرایش
+                        پروفایل</button>
+                </div>
+            </div>
+            <!-- profile middle-->
+            <div class="mx-auto justify-center mt-5 flex gap-5 font-vazir dark:text-dark-text text-light-text">
+                <div
+                    class="py-7 w-80 flex flex-col items-center justify-center dark:bg-dark-card bg-light-card rounded-xl border dark:border-dark-border border-light-border">
+                    <h2 class="font-normal text-3xl">8</h2>
+                    <h3 class="text-[16px]">شاعران محبوب</h3>
+                    <p class="text-[14px] dark:text-dark-text-secondary text-light-text-secondary">شاعران مورد علاقه شما
+                    </p>
+                </div>
+                <div
+                    class="py-7 w-80 flex flex-col items-center justify-center dark:bg-dark-card bg-light-card rounded-xl border dark:border-dark-border border-light-border">
+                    <h2 class="font-normal text-3xl">34</h2>
+                    <h3 class="text-[16px]">فال های من</h3>
+                    <p class="text-[14px] dark:text-dark-text-secondary text-light-text-secondary">تعداد فال های دریاف
+                        شده</p>
+                </div>
+                <div
+                    class="py-7 w-80 flex flex-col items-center justify-center dark:bg-dark-card bg-light-card rounded-xl border dark:border-dark-border border-light-border">
+                    <h2 class="font-normal text-3xl">12</h2>
+                    <h3 class="text-[16px]">علاقه مندی ها</h3>
+                    <p class="text-[14px] dark:text-dark-text-secondary text-light-text-secondary">اشعار و ابیات ذخیره
+                        شده</p>
+                </div>
+            </div>
+            <!-- profile detail and falls history -->
+            <div class="mt-5 flex gap-5">
+                <div
+                    class="font-vazir dark:bg-dark-card bg-light-card rounded-xl basis-[60%] border dark:border-dark-border border-light-border px-4 py-4">
+                    <div>
+                        <div class="flex items-center gap-3 font-bold  dark:text-dark-text text-light-text">
+                            <i
+                                class="fa-regular fa-calendar dark:text-dark-text-secondary text-light-text-secondary text-xl"></i>
+                            آخرین فال های من
+                        </div>
+                        <ul class="mt-4 flex flex-col gap-2">
+                            <li class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
+                                <div class="flex gap-5 items-center">
+                                    <i class="fa-solid fa-book-open dark:text-dark-primary text-light-primary"></i>
+                                    <div class="flex flex-col gap-2">
+                                        <h2 class="dark:text-dark-text text-light-text">غزل شماره 345 حافظ</h2>
+                                        <p class="line-clamp-1 dark:text-dark-text-secondary">سلام سلام سلام سلام سلام
+                                            <br>
+                                            سالم
+                                        </p>
+                                        <p class="dark:text-dark-text-secondary">1405/10/20</p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="flex justify-center items-center rounded-full dark:bg-dark-surface bg-light-surface w-7 h-7 cursor-pointer">
+                                    <i class="fa-solid fa-chevron-left justify-center text-[12px] text-white"></i>
+                                </span>
+                            </li>
+                            <li class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
+                                <div class="flex gap-5 items-center">
+                                    <i class="fa-solid fa-book-open dark:text-dark-primary text-light-primary"></i>
+                                    <div class="flex flex-col gap-2">
+                                        <h2 class="dark:text-dark-text text-light-text">غزل شماره 345 حافظ</h2>
+                                        <p class="line-clamp-1 dark:text-dark-text-secondary">سلام سلام سلام سلام سلام
+                                            <br>
+                                            سالم
+                                        </p>
+                                        <p class="dark:text-dark-text-secondary">1405/10/20</p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="flex justify-center items-center rounded-full dark:bg-dark-surface bg-light-surface w-7 h-7 cursor-pointer">
+                                    <i class="fa-solid fa-chevron-left justify-center text-[12px] text-white"></i>
+                                </span>
+                            </li>
+                            <li class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
+                                <div class="flex gap-5 items-center">
+                                    <i class="fa-solid fa-book-open dark:text-dark-primary text-light-primary"></i>
+                                    <div class="flex flex-col gap-2">
+                                        <h2 class="dark:text-dark-text text-light-text">غزل شماره 345 حافظ</h2>
+                                        <p class="line-clamp-1 dark:text-dark-text-secondary">سلام سلام سلام سلام سلام
+                                            <br>
+                                            سالم
+                                        </p>
+                                        <p class="dark:text-dark-text-secondary">1405/10/20</p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="flex justify-center items-center rounded-full dark:bg-dark-surface bg-light-surface w-7 h-7 cursor-pointer">
+                                    <i class="fa-solid fa-chevron-left justify-center text-[12px] text-white"></i>
+                                </span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full py-3 border-2 dark:border-dark-border border-light-border rounded-xl mt-4 text-dark-primary-hover transition-normal duration-300 hover:text-dark-text hover:bg-dark-primary cursor-pointer hover:border-dark-primary-hover">مشاهده
+                            همه تاریخچه</button>
+                    </div>
+                </div>
+                <div class="font-vazir flex flex-col rounded-xl basis-[40%]">
+                    <div
+                        class="dark:bg-dark-card bg-light-card border dark:border-dark-border border-light-border rounded-xl px-4 py-4">
+                        <div class="flex gap-3 font-bold dark:text-dark-text text-light-text">
+                            <i
+                                class="fa-regular fa-user dark:text-dark-text-secondary text-light-text-secondary text-xl"></i>
+                            اطلاعات حساب کاربری
+                        </div>
+                        <ul class="mt-4 dark:text-dark-text-secondary text-light-text-secondary">
+                            <li class="relative flex justify-between border-b py-2.5 dark:border-dark-border">
+                                <p>نام کاربری</p>
+                                <p>Parham</p>
+                            </li>
+                            <li class="flex justify-between border-b py-2.5 dark:border-dark-border">
+                                <p>ایمیل</p>
+                                <p>email@gmail.com</p>
+                            </li>
+                            <li class="flex justify-between border-b py-2.5 dark:border-dark-border">
+                                <p>شماره موبایل</p>
+                                <p>981234567891+</p>
+                            </li>
+                            <li class="flex pt-2.5 justify-between">
+                                <p>نام و نام خانوادگی</p>
+                                <p>پرهام سراوانی</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- fall history page -->
+        <div class="hidden h-full w-full border-2 dark:border-dark-border border-light-border rounded-xl">
+
+        </div>
+
+        <!-- setting page -->
+        <div class="hidden h-full w-full border-2 dark:border-dark-border border-light-border rounded-xl">
+
+        </div>
+    </div>
     <script type="module" src="./src/js/profile.js"></script>
 </body>
+
 </html>
