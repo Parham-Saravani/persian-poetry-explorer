@@ -23,9 +23,19 @@ https://persian-poetry-explorer.vercel.app/
 
 ---
 
-## 📸 Preview
+## Screenshots
 
-![Preview](./preview.png)
+### Home Page
+
+![Home](./screenshots/home.png)
+
+### Poet Page
+
+![Poet](./screenshots/poet.png)
+
+### Profile Page
+
+![Profile](./screenshots/profile.png)
 
 ---
 
@@ -73,19 +83,6 @@ https://persian-poetry-explorer.vercel.app/
 - Mobile friendly
 - Tablet friendly
 - Desktop optimized
-
----
-
-## 🛠️ Technologies
-
-- Vanilla JavaScript
-- Tailwind CSS v4
-- Vite
-- Swiper.js
-- Font Awesome
-- Ganjoor API
-
----
 
 ## 📡 API
 
