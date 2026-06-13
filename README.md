@@ -6,6 +6,12 @@ The project provides an elegant experience for exploring Persian poets, reading 
 
 ---
 
+## 🌐 Live Demo
+
+https://persian-poetry-explorer.vercel.app/
+
+---
+
 ## 🛠️ Technologies
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
@@ -14,12 +20,6 @@ The project provides an elegant experience for exploring Persian poets, reading 
 ![Swiper](https://img.shields.io/badge/Swiper.js-6332F6?logo=swiper&logoColor=white)
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-528DD7?logo=fontawesome&logoColor=white)
 ![Ganjoor API](https://img.shields.io/badge/Ganjoor-API-7C3AED)
-
----
-
-## 🌐 Live Demo
-
-https://persian-poetry-explorer.vercel.app/
 
 ---
 
