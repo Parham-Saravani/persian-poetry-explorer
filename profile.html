@@ -29,7 +29,7 @@
 
     <!-- sidebar -->
     <div
-        class="py-3 px-3 rounded-tl-xl rounded-bl-xl fixed h-full w-[15%] dark:bg-dark-surface bg-light-surface border-l dark:border-dark-border border-light-border">
+        class="max-lg:hidden max-xl:w-[20%] py-3 px-3 rounded-tl-xl rounded-bl-xl fixed h-full w-[15%] dark:bg-dark-surface bg-light-surface border-l dark:border-dark-border border-light-border">
         <div class="relative h-full">
             <div class="text-center">
                 <h1 class="text-dark-primary font-vazir font-bold text-2xl">Avin</h1>
@@ -43,17 +43,17 @@
                         صفحه اصلی
                     </li>
                     <li
-                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden active menu-items">
+                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden active menu-items" data-page="mainPage">
                         <i class="fa-regular fa-user"></i>
                         صفحه پروفایل
                     </li>
                     <li
-                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden menu-items">
+                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden menu-items" data-page="fallHistoryPage">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         تاریخچه فال ها
                     </li>
                     <li
-                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden menu-items">
+                        class="flex gap-3 items-center rounded-xl py-4 px-2 cursor-pointer transition-normal duration-300 hover:bg-dark-primary hover:text-dark-text border-hidden menu-items" data-page="settingPage">
                         <i class="fa-solid fa-gear"></i>
                         تنظیمات
                     </li>
@@ -71,10 +71,10 @@
 
 
     <!-- main content -->
-    <div class="py-8 ml-10 mx-auto w-[80%]">
+    <div class="py-6 ml-10 mx-auto max-lg:w-full max-xl:w-[75%] w-[80%]">
         <!-- profile page-->
         <div
-            class="py-3 px-5 h-full w-full border dark:border-dark-border border-light-border dark:bg-dark-surface bg-light-surface rounded-xl shadow">
+            class="py-3 px-5 h-full w-full border dark:border-dark-border border-light-border dark:bg-dark-surface bg-light-surface rounded-xl shadow main-profile-page">
             <div class="flex flex-col gap-1 font-vazir">
                 <h2 class="text-2xl font-bold dark:text-dark-text text-light-text">پروفایل من</h2>
                 <p class="text-[14px] dark:text-dark-text-secondary text-light-text-setext-dark-text-secondary">اطلاعات
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <!-- profile detail and falls history -->
-            <div class="mt-5 flex gap-5">
+            <div class="mt-5 max-md:flex-col-reverse flex gap-5">
                 <div
                     class="font-vazir dark:bg-dark-card bg-light-card rounded-xl basis-[60%] border dark:border-dark-border border-light-border px-4 py-4">
                     <div>
@@ -139,7 +139,8 @@
                             آخرین فال های من
                         </div>
                         <ul class="mt-4 flex flex-col gap-2">
-                            <li class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
+                            <li
+                                class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
                                 <div class="flex gap-5 items-center">
                                     <i class="fa-solid fa-book-open dark:text-dark-primary text-light-primary"></i>
                                     <div class="flex flex-col gap-2">
@@ -156,7 +157,8 @@
                                     <i class="fa-solid fa-chevron-left justify-center text-[12px] text-white"></i>
                                 </span>
                             </li>
-                            <li class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
+                            <li
+                                class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
                                 <div class="flex gap-5 items-center">
                                     <i class="fa-solid fa-book-open dark:text-dark-primary text-light-primary"></i>
                                     <div class="flex flex-col gap-2">
@@ -173,7 +175,8 @@
                                     <i class="fa-solid fa-chevron-left justify-center text-[12px] text-white"></i>
                                 </span>
                             </li>
-                            <li class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
+                            <li
+                                class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-2 border dark:border-dark-border border-light-border">
                                 <div class="flex gap-5 items-center">
                                     <i class="fa-solid fa-book-open dark:text-dark-primary text-light-primary"></i>
                                     <div class="flex flex-col gap-2">
@@ -228,13 +231,113 @@
         </div>
 
         <!-- fall history page -->
-        <div class="hidden h-full w-full border-2 dark:border-dark-border border-light-border rounded-xl">
+        <div
+            class="hidden py-3 font-vazir px-5 h-full w-full border dark:border-dark-border border-light-border dark:bg-dark-surface bg-light-surface rounded-xl shadow fall-history-page">
+            <div class="flex flex-col gap-1 font-vazir">
+                <h2 class="text-2xl font-bold dark:text-dark-text text-light-text">تنظیمات</h2>
+                <p class="text-[14px] dark:text-dark-text-secondary text-light-text-setext-dark-text-secondary">تنظیمات
+                    برنامه و شخصی سازی</p>
+            </div>
+            <div class="mt-5 flex items-center justify-between">
+                <div
+                    class="w-100 flex justify-between pl-2 items-center dark:bg-dark-card bg-light-card rounded-xl border-2 dark:border-dark-border border-light-border">
+                    <input
+                        class="outline-hidden dark:text-dark-text text-light-text w-84 pr-3 py-3.5 placeholder:text-[14px] dark:placeholder:text-dark-text-secondary placeholder:text-light-text-secondary"
+                        type="text" placeholder="جستجو در شماره غزل یا متن فال">
+                    <button
+                        class="px-2.5 py-2.5 flex justify-center items-center text-white rounded-xl dark:bg-dark-primary bg-light-primary transition-normal duration-300 dark:hover:bg-dark-primary-hover hover:bg-light-primary-hover cursor-pointer">
+                        <i class="text-xl fa-solid fa-search"></i>
+                    </button>
+                </div>
 
+                <div
+                    class="flex items-center dark:bg-dark-card bg-light-card rounded-xl justify-between gap-7 px-4 py-5">
+                    <span
+                        class="flex justify-center items-center text-2xl dark:text-dark-primary text-light-primary bg-violet-600/20 rounded-xl w-10 h-10">
+                        <i class="fa-regular fa-calendar"></i>
+                    </span>
+                    <div class="flex flex-col gap-1">
+                        <p class="dark:text-dark-text text-light-text text-xl font-bold">0</p>
+                        <p class="dark:text-dark-text-secondary text-light-text-secondary">فال های گرفته شده</p>
+                    </div>
+                </div>
+
+                <button
+                    class="flex items-center gap-2 rounded-xl border-2 dark:border-dark-primary border-light-primary text-dark-primary transition-normal duration-300 dark:hover:bg-dark-primary hover:bg-light-primary hover:text-white text-[14px] cursor-pointer px-3 py-3">
+                    <i class="fa-solid fa-trash"></i> پاک کردن همه
+                </button>
+            </div>
+
+            <div class="mt-5">
+                <ul class="flex flex-col gap-3">
+                    <li
+                        class="flex justify-between items-center dark:bg-dark-input-bg rounded-xl px-4 py-4 border dark:border-dark-border border-light-border">
+                        <div class="flex gap-5 items-center">
+                            <i class="fa-solid fa-book-open dark:text-dark-primary text-light-primary text-2xl"></i>
+                            <div class="flex flex-col gap-2">
+                                <h2 class="dark:text-dark-text text-light-text">غزل شماره 345 حافظ</h2>
+                                <p class="line-clamp-1 dark:text-dark-text-secondary">سلام سلام سلام سلام سلام
+                                    <br>
+                                    سالم
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-15 justify-between items-center">
+                            <div class="flex flex-col gap-1 text-center">
+                                <p class="dark:text-dark-text-secondary text-light-text-secondary">شنبه</p>
+                                <p class="dark:text-dark-text-secondary text-light-text-secondary">1405/10/20</p>
+                            </div>
+                            <span
+                                class="flex justify-center items-center rounded-full dark:bg-dark-surface bg-light-surface w-10 h-10 cursor-pointer">
+                                <i class="fa-solid fa-chevron-left justify-center text-[17px] text-white"></i>
+                            </span>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
         </div>
 
         <!-- setting page -->
-        <div class="hidden h-full w-full border-2 dark:border-dark-border border-light-border rounded-xl">
+        <div
+            class="hidden font-vazir py-3 px-5 h-full w-full border dark:border-dark-border border-light-border dark:bg-dark-surface bg-light-surface rounded-xl shadow setting-page">
+            <div class="flex flex-col gap-1 font-vazir">
+                <h2 class="text-2xl font-bold dark:text-dark-text text-light-text">تنظیمات</h2>
+                <p class="text-[14px] dark:text-dark-text-secondary text-light-text-setext-dark-text-secondary">تنظیمات
+                    برنامه و شخصی سازی</p>
+            </div>
+            <div class="mt-5">
+                <ul class="flex flex-col gap-3">
+                    <li
+                        class="w-full flex items-center justify-between dark:bg-dark-card bg-light-card rounded-xl px-5 py-4 border dark:border-dark-border border-light-border">
+                        <div class="flex gap-4 items-center">
+                            <i class="fa-regular fa-moon text-3xl dark:text-dark-primary text-light-primary"></i>
+                            <p class="dark:text-dark-text text-light-text text-[18px]">حالت تاریک</p>
+                        </div>
+                        <label class="w-20 h-10 rounded-full overflow-hidden cursor-pointer">
+                            <input class="hidden setting-checkbox dark-mode-checkbox" type="checkbox">
+                            <div
+                                class="dark:bg-dark-surface bg-light-surface w-full h-full relative before:absolute before:left-1 before:bottom-0 before:top-0 before:my-auto before:w-8 before:h-8 dark:before:bg-dark-card before:bg-light-card  before:rounded-full before:transition-normal before:duration-300 transition-normal duration-300 checkbox-bg">
 
+                            </div>
+                        </label>
+                    </li>
+                    <li
+                        class="w-full flex items-center justify-between dark:bg-dark-card bg-light-card rounded-xl px-5 py-4 border dark:border-dark-border border-light-border">
+                        <div class="flex gap-4 items-center">
+                            <i class="fa-regular fa-bookmark text-3xl dark:text-dark-primary text-light-primary"></i>
+                            <p class="dark:text-dark-text text-light-text text-[18px]">ذخیره فال ها</p>
+                        </div>
+                        <label class="w-20 h-10 rounded-full overflow-hidden cursor-pointer">
+                            <input class="hidden setting-checkbox" type="checkbox">
+                            <div
+                                class="dark:bg-dark-surface bg-light-surface w-full h-full relative before:absolute before:left-1 before:bottom-0 before:top-0 before:my-auto before:w-8 before:h-8 dark:before:bg-dark-card before:bg-light-card  before:rounded-full before:transition-normal before:duration-300 transition-normal duration-300 checkbox-bg">
+
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <script type="module" src="./src/js/profile.js"></script>

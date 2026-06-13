@@ -55,6 +55,11 @@
     }
 }
 
+.setting-checkbox:checked + .checkbox-bg{
+    @apply dark:bg-dark-primary bg-light-primary before:left-11 before:bg-white
+}
+
+
 .sort-by-century-items.active {
     @apply dark:bg-dark-primary bg-light-primary text-dark-text
 }
