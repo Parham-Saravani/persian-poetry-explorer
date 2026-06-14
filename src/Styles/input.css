@@ -18,11 +18,11 @@
 }
 
 .auth-active {
-    @apply border-2 border-dark-primary
+    @apply border-b-2 border-dark-primary
 }
 
 .auth-status-container>*:not(.auth-active) {
-    @apply border-2 border-dark-border
+    @apply border-b-2 border-dark-border
 }
 
 
@@ -55,7 +55,7 @@
     }
 }
 
-.setting-checkbox:checked + .checkbox-bg{
+.setting-checkbox:checked+.checkbox-bg {
     @apply dark:bg-dark-primary bg-light-primary before:left-11 before:bg-white
 }
 
@@ -64,7 +64,7 @@
     @apply dark:bg-dark-primary bg-light-primary text-dark-text
 }
 
-.active{
+.active {
     @apply dark:bg-dark-primary bg-light-primary text-dark-text
 }
 
